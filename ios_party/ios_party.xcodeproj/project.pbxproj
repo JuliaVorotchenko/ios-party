@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FB235C88B9001132C7 /* AppDelegate.swift */; };
-		CDF853FE235C88B9001132C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FD235C88B9001132C7 /* SceneDelegate.swift */; };
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
 		CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */; };
 		CDF85413235C8F40001132C7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF85412235C8F40001132C7 /* AuthViewController.swift */; };
 		CDF85415235C8F5B001132C7 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85414235C8F5B001132C7 /* AuthViewController.storyboard */; };
+		CDF85418235CA9AF001132C7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF85417235CA9AF001132C7 /* AppCoordinator.swift */; };
+		CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF85419235CB784001132C7 /* SceneDelegate.swift */; };
+		CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8541C235CBA9B001132C7 /* Coordinator.swift */; };
+		CDF8541F235CBADF001132C7 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8541E235CBADF001132C7 /* AppConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CDF853F8235C88B9001132C7 /* ios_party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF853FB235C88B9001132C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDF853FD235C88B9001132C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CDF85404235C88BA001132C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF85407235C88BA001132C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDF85409235C88BA001132C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDF85412235C8F40001132C7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CDF85414235C8F5B001132C7 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		CDF85417235CA9AF001132C7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CDF85419235CB784001132C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CDF8541C235CBA9B001132C7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CDF8541E235CBADF001132C7 /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,9 @@
 			children = (
 				CDF853FB235C88B9001132C7 /* AppDelegate.swift */,
 				CDF8540F235C8EBA001132C7 /* Source */,
-				CDF853FD235C88B9001132C7 /* SceneDelegate.swift */,
 				CDF85404235C88BA001132C7 /* Assets.xcassets */,
 				CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */,
+				CDF85419235CB784001132C7 /* SceneDelegate.swift */,
 				CDF85409235C88BA001132C7 /* Info.plist */,
 			);
 			path = ios_party;
@@ -69,6 +75,8 @@
 		CDF8540F235C8EBA001132C7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CDF8541B235CBA7D001132C7 /* Protocol */,
+				CDF85416235CA990001132C7 /* Coordinator */,
 				CDF85410235C8EDC001132C7 /* UI */,
 			);
 			path = Source;
@@ -89,6 +97,23 @@
 				CDF85414235C8F5B001132C7 /* AuthViewController.storyboard */,
 			);
 			path = AuthController;
+			sourceTree = "<group>";
+		};
+		CDF85416235CA990001132C7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CDF85417235CA9AF001132C7 /* AppCoordinator.swift */,
+				CDF8541E235CBADF001132C7 /* AppConfigurator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CDF8541B235CBA7D001132C7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CDF8541C235CBA9B001132C7 /* Coordinator.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF85418235CA9AF001132C7 /* AppCoordinator.swift in Sources */,
 				CDF85413235C8F40001132C7 /* AuthViewController.swift in Sources */,
+				CDF8541F235CBADF001132C7 /* AppConfigurator.swift in Sources */,
+				CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */,
 				CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */,
-				CDF853FE235C88B9001132C7 /* SceneDelegate.swift in Sources */,
+				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

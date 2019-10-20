@@ -8,23 +8,32 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, StoryboardLoadable {
+    
+    static func startVC() -> AuthViewController {
+        let controller = self.loadFromStoryboard()
+        return controller
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+
+protocol StoryboardLoadable {
+    static func loadFromStoryboard(storyboardName: String?) -> Self
+}
+
+extension StoryboardLoadable where Self: UIViewController {
+    static func loadFromStoryboard(storyboardName: String? = nil) -> Self {
+        let storyboard = UIStoryboard(name: storyboardName ?? String(describing: Self.self), bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: String(describing: Self.self)) as? Self ?? Self()
+        
+        return controller
     }
-    */
-
 }
