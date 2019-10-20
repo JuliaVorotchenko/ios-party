@@ -12,7 +12,7 @@
         <scene sceneID="COf-Ww-8gf">
             <objects>
                 <viewController storyboardIdentifier="AuthViewController" id="NZv-wH-xPT" customClass="AuthViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ebC-mw-1YE">
+                    <view key="view" contentMode="scaleToFill" id="ebC-mw-1YE" customClass="AuthView" customModule="ios_party" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -128,6 +128,9 @@
                                                         <state key="normal" title="Log In">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onLogin:" destination="NZv-wH-xPT" eventType="touchUpInside" id="0Lg-Ry-zAg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -156,7 +159,14 @@
                             <constraint firstAttribute="bottom" secondItem="KD0-m2-CZw" secondAttribute="bottom" id="mjb-Mk-mCK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Qe-UV-MOn"/>
+                        <connections>
+                            <outlet property="passwordTextField" destination="GaG-yQ-331" id="SSy-XO-1ZK"/>
+                            <outlet property="userNameTextField" destination="fub-MY-3L0" id="DG4-XN-dvu"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="rootView" destination="ebC-mw-1YE" id="NXH-l7-0HE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5p-LL-mQn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

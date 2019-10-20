@@ -10,6 +10,8 @@ import UIKit
 
 class AuthViewController: UIViewController, StoryboardLoadable {
     
+    @IBOutlet var rootView: AuthView?
+    
     static func startVC() -> AuthViewController {
         let controller = self.loadFromStoryboard()
         return controller
@@ -18,22 +20,10 @@ class AuthViewController: UIViewController, StoryboardLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-
-}
-
-
-protocol StoryboardLoadable {
-    static func loadFromStoryboard(storyboardName: String?) -> Self
-}
-
-extension StoryboardLoadable where Self: UIViewController {
-    static func loadFromStoryboard(storyboardName: String? = nil) -> Self {
-        let storyboard = UIStoryboard(name: storyboardName ?? String(describing: Self.self), bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: String(describing: Self.self)) as? Self ?? Self()
+    @IBAction func onLogin(_ sender: UIButton) {
         
-        return controller
     }
+    
 }
