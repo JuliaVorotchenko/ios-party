@@ -67,6 +67,7 @@ getToken()
                     let tokenModel = try decoder.decode(TokenModel.self, from: data)
                     print(tokenModel)
                 } catch {
+                    self.showServerErrorAlert(error)
                     print(error)
                 }
                 

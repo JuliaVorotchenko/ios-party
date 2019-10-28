@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CDA67CC92367526C00CB10D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CC82367526C00CB10D0 /* TokenModel.swift */; };
 		CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCA2367527800CB10D0 /* UserModel.swift */; };
+		CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */; };
+		CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */; };
 		CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FB235C88B9001132C7 /* AppDelegate.swift */; };
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
 		CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		CDA67CC82367526C00CB10D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		CDA67CCA2367527800CB10D0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsContainer.swift; sourceTree = "<group>"; };
 		CDF853F8235C88B9001132C7 /* ios_party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF853FB235C88B9001132C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF85404235C88BA001132C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CDA67CCC2367983000CB10D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CDA67CCF23679B8300CB10D0 /* UserDefaultsContainer */ = {
+			isa = PBXGroup;
+			children = (
+				CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */,
+			);
+			path = UserDefaultsContainer;
+			sourceTree = "<group>";
+		};
 		CDF853EF235C88B9001132C7 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +102,7 @@
 				CDF853FB235C88B9001132C7 /* AppDelegate.swift */,
 				CDF8540F235C8EBA001132C7 /* Source */,
 				CDF85404235C88BA001132C7 /* Assets.xcassets */,
+				CDA67CCC2367983000CB10D0 /* Extensions */,
 				CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */,
 				CDF85419235CB784001132C7 /* SceneDelegate.swift */,
 				CDF85409235C88BA001132C7 /* Info.plist */,
@@ -92,6 +113,7 @@
 		CDF8540F235C8EBA001132C7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CDA67CCF23679B8300CB10D0 /* UserDefaultsContainer */,
 				CDA67CC7236751C500CB10D0 /* Models */,
 				CDF8541B235CBA7D001132C7 /* Protocol */,
 				CDF85416235CA990001132C7 /* Coordinator */,
@@ -215,7 +237,9 @@
 				CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */,
 				CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */,
 				CDF85423235CBD0C001132C7 /* AuthView.swift in Sources */,
+				CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */,
 				CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */,
+				CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */,
 				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
