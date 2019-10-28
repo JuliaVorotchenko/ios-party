@@ -63,8 +63,8 @@
                                                                     <constraint firstAttribute="trailing" secondItem="jul-ub-R1j" secondAttribute="trailing" constant="15" id="jZO-xa-HM4"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fub-MY-3L0">
-                                                                <rect key="frame" x="50" y="21.5" width="225" height="17"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tesonet" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fub-MY-3L0">
+                                                                <rect key="frame" x="50" y="21" width="225" height="18.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -102,7 +102,7 @@
                                                                     <constraint firstItem="4bA-1o-Au1" firstAttribute="leading" secondItem="Q2j-HM-2Bd" secondAttribute="leading" constant="15" id="gvA-E9-QD5"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaG-yQ-331">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="partyanimal" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaG-yQ-331">
                                                                 <rect key="frame" x="58" y="0.0" width="217" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
