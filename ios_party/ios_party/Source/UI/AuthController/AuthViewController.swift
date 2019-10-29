@@ -49,23 +49,17 @@ getToken()
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else { return }
-            
-            // НАДО для того что бы посмотреть что за ответ я получаю,
-            // только тут я сериализовал но по факту это не обязательно
-            if let value = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
-                debugPrint("NetworkParser:", value)
+            if let httpResponse = response as? HTTPURLResponse {
+                guard httpResponse.statusCode == 200 else { return }
             }
-            
-            // Диспатч надо что бы вывести на мейн поток.
+    
             DispatchQueue.main.async {
                 do {
-                    
-                    // У нас есть чудесный декодер котоырй умеет декодить то что нам надо
-                    // Перегонять в модель что нам нужна
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let tokenModel = try decoder.decode(TokenModel.self, from: data)
-                    print(tokenModel)
+                    UserDefaults.standard.set(tokenModel.token, forKey: "Token")
+                    print("Token:", tokenModel)
                 } catch {
                     self.showServerErrorAlert(error)
                     print(error)
