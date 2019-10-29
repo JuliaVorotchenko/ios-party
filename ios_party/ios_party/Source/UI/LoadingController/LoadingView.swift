@@ -1,0 +1,14 @@
+//
+//  LoadingView.swift
+//  ios_party
+//
+//  Created by Юлия Воротченко on 29.10.2019.
+//  Copyright © 2019 Юлия Воротченко. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class LoadingView: UIView {
+    
+}

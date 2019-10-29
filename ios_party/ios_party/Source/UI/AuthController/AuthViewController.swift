@@ -33,13 +33,11 @@ getToken()
             let password = rootView?.passwordTextField?.text,
             let url = URL(string: "http://playground.tesonet.lt/v1/tokens")
             else { return }
-        //let model = UserModel(username: "tesonet", password: "partyanimal")
         let model = UserModel(username: username, password: password)
         
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(model)
         
-        //Надо для того что бы посмотреть что отправляю на сервак
         let jsonString = String(data: jsonData!, encoding: .utf8)
         print(jsonString)
         
