@@ -12,6 +12,8 @@ final class AppCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     
+    var authController: AuthViewController?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -22,7 +24,30 @@ final class AppCoordinator: Coordinator {
     
     private func createAuthController() {
         let controller = AuthViewController.startVC()
+        
+        self.authController = controller
         self.navigationController.pushViewController(controller, animated: true)
+        
+        controller.eventHandler = { [weak self] event in
+            switch event {
+            case .login:
+               
+                self?.createLoginController()
+                 self?.authController = nil
+            case .error(let errorMessage):
+                self?.showAlertError(with: errorMessage)
+            }
+        }
     }
     
+    private func createLoginController() {
+        
+        let controller = LoadingViewController.startVC()
+        self.navigationController.pushViewController(controller, animated: true)
+        
+    }
+    
+    private func showAlertError(with message: String) {
+        self.navigationController.showAlert(title: message)
+    }
 }

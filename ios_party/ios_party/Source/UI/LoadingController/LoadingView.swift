@@ -11,4 +11,6 @@ import UIKit
 
 class LoadingView: UIView {
     
+    @IBOutlet weak var fetchLabel: UILabel!
+    @IBOutlet weak var bg: UIImageView!
 }

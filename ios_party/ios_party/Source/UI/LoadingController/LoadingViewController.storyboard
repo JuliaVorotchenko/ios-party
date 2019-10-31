@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dJk-Ld-1i5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
@@ -10,8 +10,8 @@
         <!--Loading View Controller-->
         <scene sceneID="EXg-PN-7hS">
             <objects>
-                <viewController storyboardIdentifier="LoadingViewController" id="dJk-Ld-1i5" customClass="LoadingViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UB1-LB-5Dq">
+                <viewController storyboardIdentifier="LoadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dJk-Ld-1i5" customClass="LoadingViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UB1-LB-5Dq" customClass="LoadingView" customModule="ios_party" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -35,7 +35,14 @@
                             <constraint firstItem="gQg-SB-W1N" firstAttribute="top" secondItem="UB1-LB-5Dq" secondAttribute="top" id="zNc-qn-82A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oSa-ut-fnR"/>
+                        <connections>
+                            <outlet property="bg" destination="gQg-SB-W1N" id="UKL-NC-yFA"/>
+                            <outlet property="fetchLabel" destination="My0-xx-dCl" id="Q8B-5o-7mi"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="loadingView" destination="UB1-LB-5Dq" id="aNs-UE-lbk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWY-ec-D8H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
