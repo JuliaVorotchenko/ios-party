@@ -41,8 +41,7 @@ class AuthViewController: UIViewController, StoryboardLoadable {
     }
 
     @IBAction func onLogin(_ sender: UIButton) {
-        //self.getToken()
-        self.eventHandler?(.login)
+        self.getToken()
     }
     
     func getToken() {
@@ -77,7 +76,6 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                             print("Token:", tokenModel)
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
-                            //self?.showServerErrorAlert(error)
                             print(error)
                         }
                         
@@ -93,7 +91,6 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                             print("error:", errorModel)
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
-                            //self?.showServerErrorAlert(error)
                             print(error)
                         }
                         
