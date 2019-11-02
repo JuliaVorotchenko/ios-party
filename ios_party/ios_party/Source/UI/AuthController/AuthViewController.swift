@@ -16,20 +16,10 @@ enum AuthEvent {
 class AuthViewController: UIViewController, StoryboardLoadable {
     
     @IBOutlet var rootView: AuthView?
+    let loaderPresenter = LoaderPresenter()
    
-    
-    
-    
     var eventHandler: ((AuthEvent) -> ())?
-    
-    deinit {
-        print("authVC")
-    }
-    
-    
-    
-   
-    
+
     static func startVC() -> AuthViewController {
         let controller = self.loadFromStoryboard()
         return controller
@@ -66,14 +56,18 @@ class AuthViewController: UIViewController, StoryboardLoadable {
             guard let data = data, error == nil else { return }
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
+                   
                     DispatchQueue.main.async {
                         do {
+                            self?.loaderPresenter.present()
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let tokenModel = try decoder.decode(TokenModel.self, from: data)
                             UserDefaultsContainer.sessionToken = tokenModel.token
-                            self?.eventHandler?(.login)
+                            //self?.eventHandler?(.login)
+                            
                             print("Token:", tokenModel)
+                            self?.loaderPresenter.dismiss()
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
                             print(error)
@@ -83,6 +77,7 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                 } else if  httpResponse.statusCode == 401 {
                     DispatchQueue.main.async {
                         do {
+                            
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let errorModel = try decoder.decode(NetworkErrorModel.self, from: data)

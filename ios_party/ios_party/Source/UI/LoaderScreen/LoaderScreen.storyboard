@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loader View Controller-->
+        <scene sceneID="sF1-Vs-25K">
+            <objects>
+                <viewController storyboardIdentifier="LoaderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c6p-zr-o92" customClass="LoaderViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fjg-Wt-OAa" userLabel="loaderRootView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8g-IQ-8Dq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="rgL-MA-DYy">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fretching the list..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8U-cV-8hu">
+                                        <rect key="frame" x="89" y="461" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBp-y0-GAO">
+                                        <rect key="frame" x="60" y="184" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="RFp-9t-72c"/>
+                                            <constraint firstAttribute="height" constant="200" id="mdK-Bz-AvS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="cBp-y0-GAO" firstAttribute="centerX" secondItem="N8g-IQ-8Dq" secondAttribute="centerX" id="C7I-ZF-E1y"/>
+                                    <constraint firstItem="t8U-cV-8hu" firstAttribute="centerX" secondItem="N8g-IQ-8Dq" secondAttribute="centerX" id="LJJ-YM-31i"/>
+                                    <constraint firstItem="cBp-y0-GAO" firstAttribute="centerY" secondItem="N8g-IQ-8Dq" secondAttribute="centerY" id="s1g-bx-NqU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="N8g-IQ-8Dq" firstAttribute="leading" secondItem="fjg-Wt-OAa" secondAttribute="leading" id="85a-vg-ecI"/>
+                            <constraint firstItem="N8g-IQ-8Dq" firstAttribute="top" secondItem="fjg-Wt-OAa" secondAttribute="top" id="lB8-Fk-KpD"/>
+                            <constraint firstAttribute="trailing" secondItem="N8g-IQ-8Dq" secondAttribute="trailing" id="sKQ-kb-nEL"/>
+                            <constraint firstAttribute="bottom" secondItem="N8g-IQ-8Dq" secondAttribute="bottom" id="wm5-VS-5O4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gaV-t0-cAT"/>
+                    </view>
+                    <connections>
+                        <outlet property="loeaderSpinner" destination="cBp-y0-GAO" id="hFB-ih-8Ip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7D-Y4-Z7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-238.125" y="46.478873239436624"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="960" height="540"/>
+    </resources>
+</document>
