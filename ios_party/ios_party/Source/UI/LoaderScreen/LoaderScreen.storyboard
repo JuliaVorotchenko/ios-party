@@ -10,7 +10,7 @@
         <!--Loader View Controller-->
         <scene sceneID="sF1-Vs-25K">
             <objects>
-                <viewController storyboardIdentifier="LoaderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c6p-zr-o92" customClass="LoaderViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoaderViewController" id="c6p-zr-o92" customClass="LoaderViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fjg-Wt-OAa" userLabel="loaderRootView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,10 +8,15 @@
 
 import UIKit
 
-class LoaderViewController: UIViewController  {
+class LoaderViewController: UIViewController, StoryboardLoadable  {
 
     @IBOutlet weak var loeaderSpinner: UIView!
     let spinnerLayer = CAShapeLayer()
+    
+    static func startVC() -> LoaderViewController {
+        let controller = self.loadFromStoryboard()
+        return controller
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -59,15 +59,15 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                    
                     DispatchQueue.main.async {
                         do {
-                            self?.loaderPresenter.present()
+                            self?.showSpinner()
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let tokenModel = try decoder.decode(TokenModel.self, from: data)
                             UserDefaultsContainer.sessionToken = tokenModel.token
-                            //self?.eventHandler?(.login)
+                            self?.eventHandler?(.login)
                             
                             print("Token:", tokenModel)
-                            self?.loaderPresenter.dismiss()
+                            self?.hideSpinner()
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
                             print(error)
