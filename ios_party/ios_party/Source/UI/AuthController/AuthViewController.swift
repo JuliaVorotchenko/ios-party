@@ -16,7 +16,7 @@ enum AuthEvent {
 class AuthViewController: UIViewController, StoryboardLoadable {
     
     @IBOutlet var rootView: AuthView?
-    let loaderPresenter = LoaderPresenter()
+    
    
     var eventHandler: ((AuthEvent) -> ())?
 
@@ -52,6 +52,7 @@ class AuthViewController: UIViewController, StoryboardLoadable {
         request.httpMethod = "POST"
         request.httpBody = jsonData
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        self.showSpinner()
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let data = data, error == nil else { return }
             if let httpResponse = response as? HTTPURLResponse {
@@ -59,7 +60,7 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                    
                     DispatchQueue.main.async {
                         do {
-                            self?.showSpinner()
+                            
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let tokenModel = try decoder.decode(TokenModel.self, from: data)
@@ -67,7 +68,6 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                             self?.eventHandler?(.login)
                             
                             print("Token:", tokenModel)
-                            self?.hideSpinner()
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
                             print(error)
@@ -84,10 +84,13 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                             
                             self?.eventHandler?(.error(errorModel.message))
                             print("error:", errorModel)
+                            
+
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
                             print(error)
                         }
+                         self?.hideSpinner()
                         
                     }
                 }

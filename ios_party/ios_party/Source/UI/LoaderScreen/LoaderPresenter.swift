@@ -15,7 +15,7 @@ final class LoaderPresenter {
         get {
             let loaderWindow = UIWindow(frame: UIScreen.main.bounds)
         loaderWindow.windowLevel = UIWindow.Level.alert + 1
-        loaderWindow.rootViewController = UIStoryboard(name: "LoaderViewController", bundle: nil).instantiateInitialViewController()
+        loaderWindow.rootViewController = UIStoryboard(name: "AuthViewController", bundle: nil).instantiateInitialViewController()
             return loaderWindow
         }
         
