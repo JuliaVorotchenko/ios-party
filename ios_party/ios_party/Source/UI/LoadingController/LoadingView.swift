@@ -13,4 +13,8 @@ class LoadingView: UIView {
     
     @IBOutlet weak var fetchLabel: UILabel!
     @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    
+
 }
