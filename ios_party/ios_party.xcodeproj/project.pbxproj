@@ -15,9 +15,6 @@
 		CDA67CD623684D5700CB10D0 /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA67CD523684D5700CB10D0 /* LoadingViewController.storyboard */; };
 		CDA67CD823684D7600CB10D0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD723684D7600CB10D0 /* LoadingView.swift */; };
 		CDA67D1E236A2E1A00CB10D0 /* NetworkErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */; };
-		CDA67D23236B30E000CB10D0 /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D22236B30E000CB10D0 /* LoaderPresenter.swift */; };
-		CDA67D25236B311200CB10D0 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D24236B311200CB10D0 /* LoaderViewController.swift */; };
-		CDA67D27236B313000CB10D0 /* LoaderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA67D26236B313000CB10D0 /* LoaderScreen.storyboard */; };
 		CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FB235C88B9001132C7 /* AppDelegate.swift */; };
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
 		CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */; };
@@ -40,9 +37,6 @@
 		CDA67CD523684D5700CB10D0 /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
 		CDA67CD723684D7600CB10D0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorModel.swift; sourceTree = "<group>"; };
-		CDA67D22236B30E000CB10D0 /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
-		CDA67D24236B311200CB10D0 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
-		CDA67D26236B313000CB10D0 /* LoaderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoaderScreen.storyboard; sourceTree = "<group>"; };
 		CDF853F8235C88B9001132C7 /* ios_party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF853FB235C88B9001132C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF85404235C88BA001132C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,16 +99,6 @@
 			path = LoadingController;
 			sourceTree = "<group>";
 		};
-		CDA67D21236B30C800CB10D0 /* LoaderScreen */ = {
-			isa = PBXGroup;
-			children = (
-				CDA67D22236B30E000CB10D0 /* LoaderPresenter.swift */,
-				CDA67D24236B311200CB10D0 /* LoaderViewController.swift */,
-				CDA67D26236B313000CB10D0 /* LoaderScreen.storyboard */,
-			);
-			path = LoaderScreen;
-			sourceTree = "<group>";
-		};
 		CDF853EF235C88B9001132C7 = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +144,6 @@
 		CDF85410235C8EDC001132C7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CDA67D21236B30C800CB10D0 /* LoaderScreen */,
 				CDA67CD223684A3D00CB10D0 /* LoadingController */,
 				CDF85411235C8EF7001132C7 /* AuthController */,
 			);
@@ -257,7 +240,6 @@
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CDF85415235C8F5B001132C7 /* AuthViewController.storyboard in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,
-				CDA67D27236B313000CB10D0 /* LoaderScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,14 +259,12 @@
 				CDA67CD823684D7600CB10D0 /* LoadingView.swift in Sources */,
 				CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */,
 				CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */,
-				CDA67D25236B311200CB10D0 /* LoaderViewController.swift in Sources */,
 				CDF85423235CBD0C001132C7 /* AuthView.swift in Sources */,
 				CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */,
 				CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */,
 				CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */,
 				CDA67CD423684D3D00CB10D0 /* LoadingViewController.swift in Sources */,
 				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,
-				CDA67D23236B30E000CB10D0 /* LoaderPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
