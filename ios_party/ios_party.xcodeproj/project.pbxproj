@@ -12,9 +12,9 @@
 		CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCA2367527800CB10D0 /* UserModel.swift */; };
 		CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */; };
 		CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */; };
-		CDA67CD423684D3D00CB10D0 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD323684D3D00CB10D0 /* LoadingViewController.swift */; };
-		CDA67CD623684D5700CB10D0 /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA67CD523684D5700CB10D0 /* LoadingViewController.storyboard */; };
-		CDA67CD823684D7600CB10D0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD723684D7600CB10D0 /* LoadingView.swift */; };
+		CDA67CD423684D3D00CB10D0 /* ServersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */; };
+		CDA67CD623684D5700CB10D0 /* ServersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */; };
+		CDA67CD823684D7600CB10D0 /* ServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD723684D7600CB10D0 /* ServersView.swift */; };
 		CDA67D1E236A2E1A00CB10D0 /* NetworkErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */; };
 		CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FB235C88B9001132C7 /* AppDelegate.swift */; };
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
@@ -35,9 +35,9 @@
 		CDA67CCA2367527800CB10D0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsContainer.swift; sourceTree = "<group>"; };
-		CDA67CD323684D3D00CB10D0 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		CDA67CD523684D5700CB10D0 /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
-		CDA67CD723684D7600CB10D0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersViewController.swift; sourceTree = "<group>"; };
+		CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServersViewController.storyboard; sourceTree = "<group>"; };
+		CDA67CD723684D7600CB10D0 /* ServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersView.swift; sourceTree = "<group>"; };
 		CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorModel.swift; sourceTree = "<group>"; };
 		CDF853F8235C88B9001132C7 /* ios_party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF853FB235C88B9001132C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,15 +91,15 @@
 			path = UserDefaultsContainer;
 			sourceTree = "<group>";
 		};
-		CDA67CD223684A3D00CB10D0 /* LoadingController */ = {
+		CDA67CD223684A3D00CB10D0 /* ServersController */ = {
 			isa = PBXGroup;
 			children = (
-				CDA67CD323684D3D00CB10D0 /* LoadingViewController.swift */,
+				CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */,
 				CD8B450F2373437E001739F2 /* LoadingViewCell.swift */,
-				CDA67CD523684D5700CB10D0 /* LoadingViewController.storyboard */,
-				CDA67CD723684D7600CB10D0 /* LoadingView.swift */,
+				CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */,
+				CDA67CD723684D7600CB10D0 /* ServersView.swift */,
 			);
-			path = LoadingController;
+			path = ServersController;
 			sourceTree = "<group>";
 		};
 		CDF853EF235C88B9001132C7 = {
@@ -147,7 +147,7 @@
 		CDF85410235C8EDC001132C7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CDA67CD223684A3D00CB10D0 /* LoadingController */,
+				CDA67CD223684A3D00CB10D0 /* ServersController */,
 				CDF85411235C8EF7001132C7 /* AuthController */,
 			);
 			path = UI;
@@ -239,7 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA67CD623684D5700CB10D0 /* LoadingViewController.storyboard in Resources */,
+				CDA67CD623684D5700CB10D0 /* ServersViewController.storyboard in Resources */,
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CDF85415235C8F5B001132C7 /* AuthViewController.storyboard in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,
@@ -259,7 +259,7 @@
 				CDF85413235C8F40001132C7 /* AuthViewController.swift in Sources */,
 				CDF85421235CBCB9001132C7 /* StoryboardLoadable.swift in Sources */,
 				CDF8541F235CBADF001132C7 /* AppConfigurator.swift in Sources */,
-				CDA67CD823684D7600CB10D0 /* LoadingView.swift in Sources */,
+				CDA67CD823684D7600CB10D0 /* ServersView.swift in Sources */,
 				CD8B45102373437E001739F2 /* LoadingViewCell.swift in Sources */,
 				CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */,
 				CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */,
@@ -267,7 +267,7 @@
 				CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */,
 				CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */,
 				CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */,
-				CDA67CD423684D3D00CB10D0 /* LoadingViewController.swift in Sources */,
+				CDA67CD423684D3D00CB10D0 /* ServersViewController.swift in Sources */,
 				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingViewCellController: UITableViewCell {
+class ServersCell: UITableViewCell {
 
 
 }

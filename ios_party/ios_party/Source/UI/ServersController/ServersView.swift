@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoadingView: UIView {
+class ServersView: UIView {
     
     //MARK: - UI elements
     @IBOutlet weak var leftBarButton: UIBarButtonItem!

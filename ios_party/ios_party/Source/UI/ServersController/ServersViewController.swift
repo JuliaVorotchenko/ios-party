@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
+class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
     
     
-   @IBOutlet var loadingView: LoadingView?
+   @IBOutlet var loadingView: ServersView?
     
-    static func startVC() -> LoadingViewController {
+    static func startVC() -> ServersViewController {
            let controller = self.loadFromStoryboard()
            return controller
        }

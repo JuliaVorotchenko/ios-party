@@ -42,7 +42,7 @@ final class AppCoordinator: Coordinator {
     
     private func createLoginController() {
         
-        let controller = LoadingViewController.startVC()
+        let controller = ServersViewController.startVC()
         self.navigationController.pushViewController(controller, animated: true)
         
     }
