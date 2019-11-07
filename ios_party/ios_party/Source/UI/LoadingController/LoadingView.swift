@@ -11,10 +11,18 @@ import UIKit
 
 class LoadingView: UIView {
     
-    @IBOutlet weak var fetchLabel: UILabel!
-    @IBOutlet weak var bg: UIImageView!
+    //MARK: - UI elements
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    @IBOutlet weak var sortButton: UIButton!
     
+   
+    //MARK: Navigation bar buttons setup
+    func setNavigationBar() {
+        self.leftBarButton.image = UIImage(named: "logo-dark")
+        self.rightBarButton.image = UIImage(named: "ico-logout")
+    }
 
+    
+    
 }

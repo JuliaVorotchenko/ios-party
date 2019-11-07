@@ -20,9 +20,9 @@ class LoadingViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
+        self.loadingView?.setNavigationBar()
         print("loading vc loaded")
-       
+        
     }
     
     // MARK: - Table view data source
@@ -38,13 +38,16 @@ class LoadingViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: - Table view delegate
     
-    //MARK: - Navigation Bar
-
-    private func setNavigationBar() {
-        self.loadingView?.leftBarButton.image = UIImage(named: "logo-dark")
-        self.loadingView?.rightBarButton.image = UIImage(named: "ico-logout")
+  
+    
+    //MARK: - IBActions
+    @IBAction func leftBarButtonTapped(_ sender: Any) {
     }
-
+    @IBAction func rightBarButtonTapped(_ sender: Any) {
+    }
+    @IBAction func sortButtonTapped(_ sender: Any) {
+    }
+    
 }
 
 
