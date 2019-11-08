@@ -8,10 +8,16 @@
 
 import UIKit
 
+enum ServersEvent {
+    case backToAuth
+    case logout
+}
+
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
-    
-    
+   
+   
    @IBOutlet var loadingView: ServersView?
+    var eventHandler: ((ServersEvent) -> ())?
     
     static func startVC() -> ServersViewController {
            let controller = self.loadFromStoryboard()
@@ -41,10 +47,15 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
   
     
     //MARK: - IBActions
+    //не работает
     @IBAction func leftBarButtonTapped(_ sender: Any) {
-    }
+        self.eventHandler?(.backToAuth)
+        print("tesonet pressed")
+                }
+    
     @IBAction func rightBarButtonTapped(_ sender: Any) {
     }
+    
     @IBAction func sortButtonTapped(_ sender: Any) {
     }
     
