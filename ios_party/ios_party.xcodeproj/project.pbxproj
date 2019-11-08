@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD8B45102373437E001739F2 /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* LoadingViewCell.swift */; };
+		CD8B45102373437E001739F2 /* ServersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* ServersCell.swift */; };
 		CDA67CC92367526C00CB10D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CC82367526C00CB10D0 /* TokenModel.swift */; };
 		CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCA2367527800CB10D0 /* UserModel.swift */; };
 		CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD8B450F2373437E001739F2 /* LoadingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
+		CD8B450F2373437E001739F2 /* ServersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersCell.swift; sourceTree = "<group>"; };
 		CDA67CC82367526C00CB10D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		CDA67CCA2367527800CB10D0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */,
-				CD8B450F2373437E001739F2 /* LoadingViewCell.swift */,
+				CD8B450F2373437E001739F2 /* ServersCell.swift */,
 				CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */,
 				CDA67CD723684D7600CB10D0 /* ServersView.swift */,
 			);
@@ -264,7 +264,7 @@
 				CDF85421235CBCB9001132C7 /* StoryboardLoadable.swift in Sources */,
 				CDF8541F235CBADF001132C7 /* AppConfigurator.swift in Sources */,
 				CDA67CD823684D7600CB10D0 /* ServersView.swift in Sources */,
-				CD8B45102373437E001739F2 /* LoadingViewCell.swift in Sources */,
+				CD8B45102373437E001739F2 /* ServersCell.swift in Sources */,
 				CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */,
 				CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */,
 				CDF85423235CBD0C001132C7 /* AuthView.swift in Sources */,
