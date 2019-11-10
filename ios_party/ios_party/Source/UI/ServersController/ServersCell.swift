@@ -9,13 +9,13 @@
 import UIKit
 
 class ServersCell: UITableViewCell {
-
+    
     @IBOutlet weak var serverLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
     
     public func fill(with model: ServersModel) {
-        self.serverLabel.text = model.name
-        self.serverLabel.text = String(model.distance)
+        serverLabel.text = model.name
+        distanceLabel.text = "\(model.distance) km"
     }
 }

@@ -12,9 +12,7 @@ import UIKit
 class ServersView: UIView {
     
     //MARK: - UI elements
-   
-    @IBOutlet weak var serversTableView: UITableView!
-    
+
     @IBOutlet weak var serversNavigationBar: UINavigationBar!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!

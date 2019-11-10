@@ -14,62 +14,51 @@ enum ServersEvent {
 }
 
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
-   
+    
     var serversArray = [ServersModel]()
-   
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var loadingView: ServersView?
     var eventHandler: ((ServersEvent) -> ())?
     
     static func startVC() -> ServersViewController {
-           let controller = self.loadFromStoryboard()
-           return controller
-       }
-
+        let controller = self.loadFromStoryboard()
+        return controller
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getServers()
-        tableView.delegate = self
-       tableView.dataSource = self
+        setTableVievDelegate()
         self.loadingView?.setNavigationBar()
-         
-       
-       
         print("loading vc loaded")
         print(serversArray.count)
-        
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table view
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return serversArray.count
-       
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ServersCell
         let server = serversArray[indexPath.row]
-        cell.serverLabel.text = server.name
-        cell.distanceLabel.text = String(server.distance)
-    
-        
-       
-        
+        cell.fill(with: server)
         return cell
     }
     
-    //MARK: - Table view delegate
-    
-  
+    private func setTableVievDelegate() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
     
     //MARK: - IBActions
     //не работает
     @IBAction func leftBarButtonTapped(_ sender: Any) {
         self.eventHandler?(.backToAuth)
         print("tesonet pressed")
-                }
+    }
     
     @IBAction func rightBarButtonTapped(_ sender: Any) {
         
@@ -107,13 +96,13 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
                             let servers = try decoder.decode([ServersModel].self, from: data)
                             self.serversArray = servers
                             self.tableView.reloadData()
-                        
+                            
                             print(self.serversArray)
                         } catch {
                             print(error)
                         }
                     } else if httpResponse.statusCode == 401 {
-                        print(error?.localizedDescription)
+                        print(error!.localizedDescription)
                     }
                 }
                 
