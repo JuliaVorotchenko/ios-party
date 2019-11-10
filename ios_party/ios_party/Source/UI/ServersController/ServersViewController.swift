@@ -15,8 +15,10 @@ enum ServersEvent {
 
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
    
+    var serversArray = [ServersModel]()
    
-   @IBOutlet var loadingView: ServersView?
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var loadingView: ServersView?
     var eventHandler: ((ServersEvent) -> ())?
     
     static func startVC() -> ServersViewController {
@@ -26,19 +28,35 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getServers()
+        tableView.delegate = self
+       tableView.dataSource = self
         self.loadingView?.setNavigationBar()
+         
+       
+       
         print("loading vc loaded")
+        print(serversArray.count)
         
     }
     
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return serversArray.count
+       
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ServersCell
+        let server = serversArray[indexPath.row]
+        cell.serverLabel.text = server.name
+        cell.distanceLabel.text = String(server.distance)
+    
+        
+       
+        
         return cell
     }
     
@@ -54,7 +72,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
     
     @IBAction func rightBarButtonTapped(_ sender: Any) {
-        getServers()
+        
     }
     
     @IBAction func sortButtonTapped(_ sender: Any) {
@@ -81,18 +99,24 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
             print(data)
             
             if let httpResponse = response as? HTTPURLResponse {
-                
-                if httpResponse.statusCode == 200 {
-                    do {
-                        let decoder = JSONDecoder()
-                        let servers = try decoder.decode([ServersModel].self, from: data)
-                        print(servers)
-                    } catch {
-                        print(error)
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        
+                        do {
+                            let decoder = JSONDecoder()
+                            let servers = try decoder.decode([ServersModel].self, from: data)
+                            self.serversArray = servers
+                            self.tableView.reloadData()
+                        
+                            print(self.serversArray)
+                        } catch {
+                            print(error)
+                        }
+                    } else if httpResponse.statusCode == 401 {
+                        print(error?.localizedDescription)
                     }
-                } else if httpResponse.statusCode == 401 {
-                    print(error?.localizedDescription)
                 }
+                
             }
             
         }
