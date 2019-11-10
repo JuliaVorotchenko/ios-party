@@ -28,6 +28,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getServers()
         setTableVievDelegate()
         self.loadingView?.setNavigationBar()
@@ -65,8 +66,28 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func sortButtonTapped(_ sender: Any) {
+        
+        let byDistanceAction = UIAlertAction(title: "By Distance", style: .default, handler: { (action: UIAlertAction!) in
+            self.distanceSort()
+        })
+        
+        let alpfaNumericalAction = UIAlertAction(title: "Alphanumerical", style: .default, handler: { (action: UIAlertAction!) in
+            self.alphanumericalSort()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        showAlert(title: nil, message: nil, preferredStyle: .actionSheet, actions: [byDistanceAction, alpfaNumericalAction, cancelAction])
+        
     }
     
+    func alphanumericalSort() {
+        serversArray.sort(by: { $0.name < $1.name })
+        tableView.reloadData()
+    }
+    
+    func distanceSort() {
+        serversArray.sort(by: { $0.distance < $1.distance })
+        tableView.reloadData()
+    }
     
     //MARK: Get request
     

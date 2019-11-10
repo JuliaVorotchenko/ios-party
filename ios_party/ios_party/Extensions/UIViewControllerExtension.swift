@@ -15,6 +15,7 @@ extension UIViewController {
     struct AppTextConstants {
         static let close = "Close"
         static let serverError = "Server Error"
+        static let cancel = "Cancel"
     }
     
     private typealias Text = AppTextConstants
