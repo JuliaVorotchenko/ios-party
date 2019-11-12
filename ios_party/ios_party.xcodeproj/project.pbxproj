@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD4A3B27237AD481006D5E2E /* ServerItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4A3B26237AD481006D5E2E /* ServerItemStoryboard.storyboard */; };
 		CD4A3B29237AD4BC006D5E2E /* ServerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */; };
-		CD4A3B2B237AD503006D5E2E /* ServerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B2A237AD503006D5E2E /* ServerItemViewController.swift */; };
 		CD4A3B2D237AD553006D5E2E /* ServerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B2C237AD553006D5E2E /* ServerItemCell.swift */; };
+		CD4A3B2F237AF424006D5E2E /* ServerItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4A3B2E237AF424006D5E2E /* ServerItemStoryboard.storyboard */; };
 		CD8B45102373437E001739F2 /* ServersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* ServersCell.swift */; };
 		CDA67CC92367526C00CB10D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CC82367526C00CB10D0 /* TokenModel.swift */; };
 		CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCA2367527800CB10D0 /* UserModel.swift */; };
@@ -39,10 +38,9 @@
 		28E112AF821466EF4767288E /* Pods_ios_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34823FA9B532FFB5FBD9180A /* Pods-ios_party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_party.debug.xcconfig"; path = "Target Support Files/Pods-ios_party/Pods-ios_party.debug.xcconfig"; sourceTree = "<group>"; };
 		5E4E8445BD1ADE40D3CB1EE5 /* Pods-ios_party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_party.release.xcconfig"; path = "Target Support Files/Pods-ios_party/Pods-ios_party.release.xcconfig"; sourceTree = "<group>"; };
-		CD4A3B26237AD481006D5E2E /* ServerItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerItemStoryboard.storyboard; sourceTree = "<group>"; };
 		CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemView.swift; sourceTree = "<group>"; };
-		CD4A3B2A237AD503006D5E2E /* ServerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemViewController.swift; sourceTree = "<group>"; };
 		CD4A3B2C237AD553006D5E2E /* ServerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemCell.swift; sourceTree = "<group>"; };
+		CD4A3B2E237AF424006D5E2E /* ServerItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerItemStoryboard.storyboard; sourceTree = "<group>"; };
 		CD8B450F2373437E001739F2 /* ServersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersCell.swift; sourceTree = "<group>"; };
 		CDA67CC82367526C00CB10D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		CDA67CCA2367527800CB10D0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -100,10 +98,9 @@
 		CD4A3B25237AD44C006D5E2E /* ServerItemController */ = {
 			isa = PBXGroup;
 			children = (
-				CD4A3B26237AD481006D5E2E /* ServerItemStoryboard.storyboard */,
 				CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */,
-				CD4A3B2A237AD503006D5E2E /* ServerItemViewController.swift */,
 				CD4A3B2C237AD553006D5E2E /* ServerItemCell.swift */,
+				CD4A3B2E237AF424006D5E2E /* ServerItemStoryboard.storyboard */,
 			);
 			path = ServerItemController;
 			sourceTree = "<group>";
@@ -290,7 +287,7 @@
 			files = (
 				CDA67CD623684D5700CB10D0 /* ServersViewController.storyboard in Resources */,
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
-				CD4A3B27237AD481006D5E2E /* ServerItemStoryboard.storyboard in Resources */,
+				CD4A3B2F237AF424006D5E2E /* ServerItemStoryboard.storyboard in Resources */,
 				CDF85415235C8F5B001132C7 /* AuthViewController.storyboard in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,
 			);
@@ -361,7 +358,6 @@
 				CD4A3B2D237AD553006D5E2E /* ServerItemCell.swift in Sources */,
 				CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */,
 				CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */,
-				CD4A3B2B237AD503006D5E2E /* ServerItemViewController.swift in Sources */,
 				CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */,
 				CDA67CD423684D3D00CB10D0 /* ServersViewController.swift in Sources */,
 				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,

@@ -9,7 +9,6 @@
 import UIKit
 
 enum ServersEvent {
-    
     case logout
 }
 
