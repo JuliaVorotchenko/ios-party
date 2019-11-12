@@ -17,19 +17,21 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     
     @IBOutlet var rootView: AuthView?
     
-   
+    
     var eventHandler: ((AuthEvent) -> ())?
-
+    
     static func startVC() -> AuthViewController {
         let controller = self.loadFromStoryboard()
         return controller
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textFieldDelegateSet()
     }
-
+    
+    
+    
     @IBAction func onLogin(_ sender: UIButton) {
         self.getToken()
     }
@@ -57,7 +59,7 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
             guard let data = data, error == nil else { return }
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
-                   
+                    
                     DispatchQueue.main.async {
                         do {
                             
@@ -86,12 +88,12 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
                             self?.eventHandler?(.error(errorModel.message))
                             print("error:", errorModel)
                             
-
+                            
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
                             print(error)
                         }
-                         self?.hideSpinner()
+                        self?.hideSpinner()
                         
                     }
                 }
@@ -100,6 +102,24 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
             
         }
         task.resume()
+    }
+    
+    
+    //MARK: - to hide keyboard
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    //MARK: - texfielddelegate
+    
+    func textFieldDelegateSet() {
+        self.rootView?.userNameTextField?.delegate = self
+        self.rootView?.passwordTextField?.delegate = self
     }
     
 }
