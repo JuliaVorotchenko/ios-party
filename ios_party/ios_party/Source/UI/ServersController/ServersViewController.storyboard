@@ -16,14 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ig-uE-UJH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                 <items>
                                     <navigationItem id="mA6-TY-xLY">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="s7h-tA-OZM">
-                                            <connections>
-                                                <action selector="leftBarButtonTapped:" destination="dJk-Ld-1i5" id="WXL-DG-Nct"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" id="waJ-9f-SiU">
                                             <connections>
                                                 <action selector="rightBarButtonTapped:" destination="dJk-Ld-1i5" id="eeo-KC-GUE"/>
@@ -33,7 +28,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Meb-Bg-9dA">
-                                <rect key="frame" x="0.0" y="93" width="375" height="514"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="507"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -83,7 +78,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g24-XH-dgQ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="51" width="375" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esh-LP-Psz">
                                         <rect key="frame" x="278.5" y="8" width="80.5" height="33"/>
@@ -134,10 +129,18 @@
                                     <constraint firstItem="FYt-ZG-zAP" firstAttribute="top" secondItem="tSW-Ht-3tB" secondAttribute="top" id="ylk-Ri-7vU"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-dark" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-ao-x9M">
+                                <rect key="frame" x="16" y="7" width="123" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="8fU-bR-VV0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ndf-ao-x9M" firstAttribute="leading" secondItem="oSa-ut-fnR" secondAttribute="leading" constant="16" id="1GH-mL-nu1"/>
                             <constraint firstItem="Meb-Bg-9dA" firstAttribute="top" secondItem="g24-XH-dgQ" secondAttribute="bottom" id="9Bf-RJ-kSu"/>
+                            <constraint firstItem="g24-XH-dgQ" firstAttribute="top" secondItem="Ndf-ao-x9M" secondAttribute="bottom" constant="10" id="9Hj-f0-Ec4"/>
                             <constraint firstItem="tSW-Ht-3tB" firstAttribute="top" secondItem="Meb-Bg-9dA" secondAttribute="bottom" id="C3I-ns-4A9"/>
                             <constraint firstItem="g24-XH-dgQ" firstAttribute="leading" secondItem="oSa-ut-fnR" secondAttribute="leading" id="E3s-VP-yOP"/>
                             <constraint firstItem="8ig-uE-UJH" firstAttribute="top" secondItem="oSa-ut-fnR" secondAttribute="top" id="LXQ-sp-8Ze"/>
@@ -150,10 +153,10 @@
                             <constraint firstItem="tSW-Ht-3tB" firstAttribute="leading" secondItem="oSa-ut-fnR" secondAttribute="leading" id="gHM-3J-bGb"/>
                             <constraint firstAttribute="bottom" secondItem="tSW-Ht-3tB" secondAttribute="bottom" id="hua-ML-1wc"/>
                             <constraint firstItem="g24-XH-dgQ" firstAttribute="trailing" secondItem="oSa-ut-fnR" secondAttribute="trailing" id="tsB-6Z-a9B"/>
+                            <constraint firstItem="Ndf-ao-x9M" firstAttribute="top" secondItem="oSa-ut-fnR" secondAttribute="top" constant="7" id="yX8-oO-xls"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oSa-ut-fnR"/>
                         <connections>
-                            <outlet property="leftBarButton" destination="s7h-tA-OZM" id="kAf-6g-cdR"/>
                             <outlet property="rightBarButton" destination="waJ-9f-SiU" id="e4s-9K-8wT"/>
                             <outlet property="serversNavigationBar" destination="8ig-uE-UJH" id="wPT-Ri-JsX"/>
                             <outlet property="sortButton" destination="FYt-ZG-zAP" id="Ogb-VI-Q1e"/>
@@ -171,5 +174,6 @@
     </scenes>
     <resources>
         <image name="ico-sort-light" width="12" height="10"/>
+        <image name="logo-dark" width="130" height="34"/>
     </resources>
 </document>

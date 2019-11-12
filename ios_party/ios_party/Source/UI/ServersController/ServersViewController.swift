@@ -9,7 +9,7 @@
 import UIKit
 
 enum ServersEvent {
-    case backToAuth
+    
     case logout
 }
 
@@ -56,25 +56,22 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: - IBActions
     //не работает
-    @IBAction func leftBarButtonTapped(_ sender: Any) {
-        self.eventHandler?(.backToAuth)
-        print("tesonet pressed")
-    }
+   
     
     @IBAction func rightBarButtonTapped(_ sender: Any) {
-        
+        self.eventHandler?(.logout)
     }
     
     @IBAction func sortButtonTapped(_ sender: Any) {
         
-        let byDistanceAction = UIAlertAction(title: "By Distance", style: .default, handler: { (action: UIAlertAction!) in
+        let byDistanceAction = UIAlertAction(title: "By Distance", style: .default, handler: { _ in
             self.distanceSort()
         })
         
-        let alpfaNumericalAction = UIAlertAction(title: "Alphanumerical", style: .default, handler: { (action: UIAlertAction!) in
+        let alpfaNumericalAction = UIAlertAction(title: "Alphanumerical", style: .default, handler: { _ in
             self.alphanumericalSort()
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         showAlert(title: nil, message: nil, preferredStyle: .actionSheet, actions: [byDistanceAction, alpfaNumericalAction, cancelAction])
         
     }

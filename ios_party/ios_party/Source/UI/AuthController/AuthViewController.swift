@@ -13,7 +13,7 @@ enum AuthEvent {
     case error(String)
 }
 
-class AuthViewController: UIViewController, StoryboardLoadable {
+class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDelegate {
     
     @IBOutlet var rootView: AuthView?
     
@@ -66,11 +66,12 @@ class AuthViewController: UIViewController, StoryboardLoadable {
                             let tokenModel = try decoder.decode(TokenModel.self, from: data)
                             UserDefaultsContainer.sessionToken = tokenModel.token
                             self?.eventHandler?(.login)
-                            
+                            self?.hideSpinner()
                             print("Token:", tokenModel)
                         } catch {
                             self?.eventHandler?(.error(error.localizedDescription))
                             print(error)
+                            self?.hideSpinner()
                         }
                         
                     }

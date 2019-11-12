@@ -8,9 +8,15 @@
 
 import UIKit
 
-class AuthView: UIView {
+class AuthView: UIView, UITextFieldDelegate {
 
 
     @IBOutlet var userNameTextField: UITextField?
     @IBOutlet var passwordTextField: UITextField?
+    
+    
+
+    
+
+    
 }

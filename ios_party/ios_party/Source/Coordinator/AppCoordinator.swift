@@ -20,14 +20,20 @@ import UIKit
     }
     
     func start() {
-        self.createAuthController()
+        if UserDefaultsContainer.sessionToken.isEmpty {
+            self.createAuthController()
+        } else {
+            self.createServersViewController()
+        }
+       
+        
     }
     
     private func createAuthController() {
         let controller = AuthViewController.startVC()
         
         self.authController = controller
-        self.navigationController.pushViewController(controller, animated: true)
+        self.navigationController.viewControllers = [controller]
         
         controller.eventHandler = { [weak self] event in
             switch event {
@@ -40,36 +46,24 @@ import UIKit
             }
         }
     }
-    //неработает
-    func backToAuthController() {
-        let controller = ServersViewController.startVC()
-        self.serversController = controller
-        self.navigationController.pushViewController(controller, animated: true)
-        
-        controller.eventHandler = { [weak self] event in
-            switch event {
-            case .backToAuth:
-                self?.createAuth()
-                self?.serversController = nil
-            case .logout:
-               print("jj")
-            }
-            
-        }
-    }
+    
     
     private func createServersViewController() {
         
         let controller = ServersViewController.startVC()
-        self.navigationController.pushViewController(controller, animated: true)
-        
+        self.navigationController.viewControllers = [controller]
+        controller.eventHandler = { [weak self] event in
+             switch event {
+             
+             case .logout:
+                UserDefaultsContainer.unregister()
+                self?.createAuthController()
+               
+             }
+             
+         }
     }
-    //не работает
-    private func createAuth() {
-        let controller = AuthViewController.startVC()
-        self.navigationController.pushViewController(controller, animated: true)
-        print("createAuth")
-    }
+   
     
     private func showAlertError(with message: String) {
         self.navigationController.showAlert(title: message)

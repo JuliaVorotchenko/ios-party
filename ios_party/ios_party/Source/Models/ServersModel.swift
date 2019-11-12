@@ -9,9 +9,6 @@
 import Foundation
 
 struct ServersModel: Codable {
-    
-    
     let name: String
     let distance: Int
-    
 }
