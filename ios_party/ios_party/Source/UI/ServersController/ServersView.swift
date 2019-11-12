@@ -6,7 +6,6 @@
 //  Copyright © 2019 Юлия Воротченко. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class ServersView: UIView {
