@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum ServersEvent {
     case logout

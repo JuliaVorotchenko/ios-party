@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum AuthEvent {
     case login
@@ -33,7 +34,8 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     
     
     @IBAction func onLogin(_ sender: UIButton) {
-        self.getToken()
+        //self.getToken()
+        self.getTokenAlamof()
     }
     
     func getToken() {
@@ -121,5 +123,49 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
         self.rootView?.userNameTextField?.delegate = self
         self.rootView?.passwordTextField?.delegate = self
     }
+    
+    
+    
+    
+    
+    
+    func getTokenAlamof() {
+        guard
+            let username = rootView?.userNameTextField?.text,
+            let password = rootView?.passwordTextField?.text,
+            let url = URL(string: "http://playground.tesonet.lt/v1/tokens")
+            else { return }
+        
+        let model = UserModel(username: username, password: password)
+        let parameters: [String: Any] = [model.username: model.password]
+        let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
+
+        
+
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+            
+            print(response.debugDescription)
+        }
+        
+        
+        
+        
+        //        let request = session.request(url, method: .post, parameters: model, encoder: JSONParameterEncoder.default, headers: header)
+//        
+//    
+//        
+//        request.responseDecodable(of: TokenModel.self) { response in
+//            switch response.result {
+//            case let .success(result):
+//                print(result.token)
+//                
+//            case let .failure(error):
+//                print(error, "error")
+//            }
+//        }
+    }
+    
+    
+    
     
 }
