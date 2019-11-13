@@ -136,15 +136,25 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
             let url = URL(string: "http://playground.tesonet.lt/v1/tokens")
             else { return }
         
-        let model = UserModel(username: username, password: password)
-        let parameters: [String: Any] = [model.username: model.password]
-        let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
-
         
-
-        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { response in
-            
+        let model = UserModel(username: username, password: password)
+        let parameters: [String: Any] = ["username": model.username, "password": model.password]
+        let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
+        
+        
+        
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseDecodable(of: TokenModel.self) { response in
             print(response.debugDescription)
+            switch response.result {
+            case .success(let token):
+                print(token, "token hey")
+                UserDefaultsContainer.sessionToken = token.token
+                
+            case .failure(let error):
+                
+                print(error, "error")
+            }
+            
         }
         
         
