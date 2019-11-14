@@ -142,17 +142,29 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
         let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
         
         
-        
-        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseDecodable(of: TokenModel.self) { response in
+        self.showSpinner()
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header)
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/json"])
+        .responseDecodable(of: TokenModel.self) { response in
+             
             print(response.debugDescription)
+            
             switch response.result {
             case .success(let token):
                 print(token, "token hey")
                 UserDefaultsContainer.sessionToken = token.token
+                self.eventHandler?(.login)
                 
             case .failure(let error):
-                
-                print(error, "error")
+                if let statusCode = response.response?.statusCode {
+                    if statusCode == 401 {
+                        let message = NetworkErrorModel(message: response.description)
+                        self.eventHandler?(.error(message.message))
+                    }
+                }
+                self.hideSpinner()
+                print(error, "error hey")
             }
             
         }
