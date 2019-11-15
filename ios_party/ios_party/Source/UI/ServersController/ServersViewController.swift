@@ -87,46 +87,30 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     //MARK: Get request
-    
+
     func getServers() {
+       
         let token = UserDefaultsContainer.sessionToken
-        
         let url = URL(string: "http://playground.tesonet.lt/v1/servers")!
+        let header: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
         
-        var request = URLRequest(url: url)
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            print(data)
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                DispatchQueue.main.async {
-                    if httpResponse.statusCode == 200 {
-                        
-                        do {
-                            let decoder = JSONDecoder()
-                            let servers = try decoder.decode([ServersModel].self, from: data)
-                            self.serversArray = servers
-                            self.tableView.reloadData()
-                            
-                            print(self.serversArray)
-                        } catch {
-                            print(error)
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: [ServersModel].self) { response in
+                print(response.debugDescription)
+                switch response.result {
+                case .success(let servers):
+                    self.serversArray = servers
+                    self.tableView.reloadData()
+                    print(self.serversArray)
+                    
+                case .failure(let error):
+                    if let statusCode = response.response?.statusCode {
+                        if statusCode == 401 {
+                            print(error.errorDescription)
                         }
-                    } else if httpResponse.statusCode == 401 {
-                        print(error!.localizedDescription)
                     }
                 }
-                
-            }
-            
         }
-        task.resume()
     }
 }

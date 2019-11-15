@@ -35,7 +35,7 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     
     @IBAction func onLogin(_ sender: UIButton) {
         //self.getToken()
-        self.getTokenAlamof()
+        self.getToken()
     }
     
     func getToken() {
@@ -44,66 +44,31 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
             let password = rootView?.passwordTextField?.text,
             let url = URL(string: "http://playground.tesonet.lt/v1/tokens")
             else { return }
+        
         let model = UserModel(username: username, password: password)
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try? jsonEncoder.encode(model)
-        
-        let jsonString = String(data: jsonData!, encoding: .utf8)
-        print(jsonString)
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let parameters: [String: Any] = ["username": model.username, "password": model.password]
+        let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
         self.showSpinner()
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            guard let data = data, error == nil else { return }
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: TokenModel.self) { response in
+                print(response.debugDescription)
+                switch response.result {
+                case .success(let token):
+                    UserDefaultsContainer.sessionToken = token.token
+                    self.eventHandler?(.login)
                     
-                    DispatchQueue.main.async {
-                        do {
-                            
-                            let decoder = JSONDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            let tokenModel = try decoder.decode(TokenModel.self, from: data)
-                            UserDefaultsContainer.sessionToken = tokenModel.token
-                            self?.eventHandler?(.login)
-                            self?.hideSpinner()
-                            print("Token:", tokenModel)
-                        } catch {
-                            self?.eventHandler?(.error(error.localizedDescription))
-                            print(error)
-                            self?.hideSpinner()
+                case .failure(let error):
+                    if let statusCode = response.response?.statusCode {
+                        if statusCode == 401 {
+                            let message = NetworkErrorModel(message: error.errorDescription!)
+                            self.eventHandler?(.error(message.message))
                         }
-                        
                     }
-                } else if  httpResponse.statusCode == 401 {
-                    DispatchQueue.main.async {
-                        do {
-                            
-                            let decoder = JSONDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            let errorModel = try decoder.decode(NetworkErrorModel.self, from: data)
-                            
-                            self?.eventHandler?(.error(errorModel.message))
-                            print("error:", errorModel)
-                            
-                            
-                        } catch {
-                            self?.eventHandler?(.error(error.localizedDescription))
-                            print(error)
-                        }
-                        self?.hideSpinner()
-                        
-                    }
+                    self.hideSpinner()
                 }
-            }
-            
-            
         }
-        task.resume()
     }
     
     
@@ -136,55 +101,32 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
             let url = URL(string: "http://playground.tesonet.lt/v1/tokens")
             else { return }
         
-        
         let model = UserModel(username: username, password: password)
         let parameters: [String: Any] = ["username": model.username, "password": model.password]
         let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
-        
-        
         self.showSpinner()
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header)
-        .validate(statusCode: 200..<300)
-        .validate(contentType: ["application/json"])
-        .responseDecodable(of: TokenModel.self) { response in
-             
-            print(response.debugDescription)
-            
-            switch response.result {
-            case .success(let token):
-                print(token, "token hey")
-                UserDefaultsContainer.sessionToken = token.token
-                self.eventHandler?(.login)
-                
-            case .failure(let error):
-                if let statusCode = response.response?.statusCode {
-                    if statusCode == 401 {
-                        let message = NetworkErrorModel(message: response.description)
-                        self.eventHandler?(.error(message.message))
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: TokenModel.self) { response in
+                print(response.debugDescription)
+                switch response.result {
+                case .success(let token):
+                    UserDefaultsContainer.sessionToken = token.token
+                    self.eventHandler?(.login)
+                    
+                case .failure(let error):
+                    if let statusCode = response.response?.statusCode {
+                        if statusCode == 401 {
+                            let message = NetworkErrorModel(message: error.errorDescription!)
+                            self.eventHandler?(.error(message.message))
+                        }
                     }
+                    self.hideSpinner()
                 }
-                self.hideSpinner()
-                print(error, "error hey")
-            }
-            
+                
         }
         
-        
-        
-        
-        //        let request = session.request(url, method: .post, parameters: model, encoder: JSONParameterEncoder.default, headers: header)
-//        
-//    
-//        
-//        request.responseDecodable(of: TokenModel.self) { response in
-//            switch response.result {
-//            case let .success(result):
-//                print(result.token)
-//                
-//            case let .failure(error):
-//                print(error, "error")
-//            }
-//        }
     }
     
     
