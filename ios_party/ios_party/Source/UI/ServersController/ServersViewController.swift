@@ -11,11 +11,15 @@ import Alamofire
 
 enum ServersEvent {
     case logout
+    case showItem(ServersModel)
 }
+
+fileprivate let cell = "Cell"
 
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
     
-    var serversArray = [ServersModel]()
+    private var serversArray = [ServersModel]()
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var loadingView: ServersView?
@@ -28,25 +32,30 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getServers()
-        setTableVievDelegate()
+        self.getServers()
+        self.setTableVievDelegate()
         self.loadingView?.setNavigationBar()
-        print("loading vc loaded")
-        print(serversArray.count)
     }
     
     // MARK: - Table view
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return serversArray.count
+        return self.serversArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ServersCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? ServersCell else { return UITableViewCell() }
         let server = serversArray[indexPath.row]
+        
         cell.fill(with: server)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(serversArray[indexPath.row])
+        print("show item")
+        self.eventHandler?(.showItem(serversArray[indexPath.row]))
+        
     }
     
     private func setTableVievDelegate() {
@@ -55,9 +64,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     //MARK: - IBActions
-    //не работает
    
-    
     @IBAction func rightBarButtonTapped(_ sender: Any) {
         self.eventHandler?(.logout)
     }
@@ -97,13 +104,10 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
             .validate(statusCode: 200..<300)
             .responseDecodable(of: [ServersModel].self) { response in
-                print(response.debugDescription)
                 switch response.result {
                 case .success(let servers):
                     self.serversArray = servers
                     self.tableView.reloadData()
-                    print(self.serversArray)
-                    
                 case .failure(let error):
                     if let statusCode = response.response?.statusCode {
                         if statusCode == 401 {

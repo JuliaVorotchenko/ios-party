@@ -14,6 +14,7 @@ import UIKit
     
     var authController: AuthViewController?
     var serversController: ServersViewController?
+    var serverItemViewController: ServerItemViewController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -58,10 +59,24 @@ import UIKit
              case .logout:
                 UserDefaultsContainer.unregister()
                 self?.createAuthController()
+             case .showItem(let item):
+                self?.createServersItemViewController(with: item)
                
              }
              
          }
+    }
+    
+    private func createServersItemViewController(with item: ServersModel) {
+        let controller = ServerItemViewController.startVC(item: item)
+        self.navigationController.pushViewController(controller, animated: true)
+        controller.eventHandler = { [weak self] event in
+            switch event {
+            case .backToServers:
+                self?.navigationController.popViewController(animated: true)
+            }
+            
+        }
     }
    
     
