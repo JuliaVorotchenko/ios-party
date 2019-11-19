@@ -18,6 +18,6 @@ class ServerItemView: UIView {
     
     func fill(model: ServersModel) {
         self.name.text = model.name
-        self.distance.text = String(model.distance)
+        self.distance.text = String("\(model.distance)" + " km")
     }
 }
