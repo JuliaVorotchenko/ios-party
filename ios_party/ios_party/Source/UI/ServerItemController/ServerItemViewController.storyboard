@@ -78,7 +78,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="serverItemView" destination="xCf-CW-rbl" id="949-Jt-xh5"/>
+                        <outlet property="rootView" destination="xCf-CW-rbl" id="949-Jt-xh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWx-Hq-fAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -21,6 +21,6 @@ class ServersCell: UITableViewCell {
     
     public func fill(with model: ServersModel) {
         serverLabel.text = model.name
-        distanceLabel.text = "\(model.distance) km"
+        distanceLabel.text = "\(model.distance)" + " " + Constants.km
     }
 }

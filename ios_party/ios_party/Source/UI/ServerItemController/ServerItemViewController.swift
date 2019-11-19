@@ -16,7 +16,7 @@ class ServerItemViewController: UIViewController, StoryboardLoadable {
     
     private var serversItem: ServersModel?
     
-    @IBOutlet var serverItemView: ServerItemView!
+    @IBOutlet var rootView: ServerItemView!
     var eventHandler:  ((ServerItemEvent) -> ())?
     
     static func startVC(item: ServersModel) -> ServerItemViewController {
@@ -29,7 +29,7 @@ class ServerItemViewController: UIViewController, StoryboardLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.serversItem.map {
-            self.serverItemView.fill(model: $0)
+            self.rootView.fill(model: $0)
         }
        
     }

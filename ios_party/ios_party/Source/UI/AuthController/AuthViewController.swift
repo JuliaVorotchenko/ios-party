@@ -42,12 +42,12 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
         guard
             let username = rootView?.userNameTextField?.text,
             let password = rootView?.passwordTextField?.text,
-            let url = URL(string: "http://playground.tesonet.lt/v1/tokens")
+            let url = URL(string: AppURL.getToken)
             else { return }
         
         let model = UserModel(username: username, password: password)
-        let parameters: [String: Any] = ["username": model.username, "password": model.password]
-        let header: HTTPHeaders = ["Content-Type": "application/json; charset=UTF-8"]
+        let parameters: [String: Any] = [Key.username: model.username, Key.password: model.password]
+        let header: HTTPHeaders = [Headers.contentType: Headers.value]
         self.showSpinner()
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header)
             .validate(statusCode: 200..<300)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CD4A3B29237AD4BC006D5E2E /* ServerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */; };
 		CD4A3B2F237AF424006D5E2E /* ServerItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4A3B2E237AF424006D5E2E /* ServerItemViewController.storyboard */; };
-		CD4A3B32237B08E6006D5E2E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B31237B08E6006D5E2E /* Networking.swift */; };
 		CD74E07D237F2B0100452FC1 /* ServerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */; };
 		CD8B45102373437E001739F2 /* ServersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* ServersCell.swift */; };
 		CDA67CC92367526C00CB10D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CC82367526C00CB10D0 /* TokenModel.swift */; };
@@ -21,6 +20,7 @@
 		CDA67CD823684D7600CB10D0 /* ServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD723684D7600CB10D0 /* ServersView.swift */; };
 		CDA67D1E236A2E1A00CB10D0 /* NetworkErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */; };
 		CDBAC9C32375C8C700BE3926 /* ServersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC9C22375C8C700BE3926 /* ServersModel.swift */; };
+		CDD9ABA32384868E00ACA769 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9ABA22384868E00ACA769 /* AppConstants.swift */; };
 		CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FB235C88B9001132C7 /* AppDelegate.swift */; };
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
 		CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */; };
@@ -41,7 +41,6 @@
 		5E4E8445BD1ADE40D3CB1EE5 /* Pods-ios_party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_party.release.xcconfig"; path = "Target Support Files/Pods-ios_party/Pods-ios_party.release.xcconfig"; sourceTree = "<group>"; };
 		CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemView.swift; sourceTree = "<group>"; };
 		CD4A3B2E237AF424006D5E2E /* ServerItemViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerItemViewController.storyboard; sourceTree = "<group>"; };
-		CD4A3B31237B08E6006D5E2E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemViewController.swift; sourceTree = "<group>"; };
 		CD8B450F2373437E001739F2 /* ServersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersCell.swift; sourceTree = "<group>"; };
 		CDA67CC82367526C00CB10D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		CDA67CD723684D7600CB10D0 /* ServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersView.swift; sourceTree = "<group>"; };
 		CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorModel.swift; sourceTree = "<group>"; };
 		CDBAC9C22375C8C700BE3926 /* ServersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersModel.swift; sourceTree = "<group>"; };
+		CDD9ABA22384868E00ACA769 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		CDF853F8235C88B9001132C7 /* ios_party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF853FB235C88B9001132C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF85404235C88BA001132C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,14 +107,6 @@
 			path = ServerItemController;
 			sourceTree = "<group>";
 		};
-		CD4A3B30237B08D0006D5E2E /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				CD4A3B31237B08E6006D5E2E /* Networking.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		CDA67CC7236751C500CB10D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +145,14 @@
 			path = ServersController;
 			sourceTree = "<group>";
 		};
+		CDD9ABA12384705000ACA769 /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				CDD9ABA22384868E00ACA769 /* AppConstants.swift */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
 		CDF853EF235C88B9001132C7 = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +188,7 @@
 		CDF8540F235C8EBA001132C7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CD4A3B30237B08D0006D5E2E /* Networking */,
+				CDD9ABA12384705000ACA769 /* AppConstants */,
 				CDA67CCF23679B8300CB10D0 /* UserDefaultsContainer */,
 				CDA67CC7236751C500CB10D0 /* Models */,
 				CDF8541B235CBA7D001132C7 /* Protocol */,
@@ -365,7 +365,6 @@
 				CDA67CD823684D7600CB10D0 /* ServersView.swift in Sources */,
 				CD8B45102373437E001739F2 /* ServersCell.swift in Sources */,
 				CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */,
-				CD4A3B32237B08E6006D5E2E /* Networking.swift in Sources */,
 				CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */,
 				CDF85423235CBD0C001132C7 /* AuthView.swift in Sources */,
 				CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */,
@@ -373,6 +372,7 @@
 				CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */,
 				CDA67CD423684D3D00CB10D0 /* ServersViewController.swift in Sources */,
 				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,
+				CDD9ABA32384868E00ACA769 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

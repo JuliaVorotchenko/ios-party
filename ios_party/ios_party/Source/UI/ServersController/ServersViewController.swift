@@ -14,7 +14,7 @@ enum ServersEvent {
     case showItem(ServersModel)
 }
 
-fileprivate let cell = "Cell"
+
 
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
     
@@ -22,7 +22,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var loadingView: ServersView?
+    @IBOutlet var rootView: ServersView?
     var eventHandler: ((ServersEvent) -> ())?
     
     static func startVC() -> ServersViewController {
@@ -34,7 +34,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.getServers()
         self.setTableVievDelegate()
-        self.loadingView?.setNavigationBar()
+        self.rootView?.setNavigationBar()
     }
     
     // MARK: - Table view
@@ -44,7 +44,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? ServersCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell, for: indexPath) as? ServersCell else { return UITableViewCell() }
         let server = serversArray[indexPath.row]
         
         cell.fill(with: server)
@@ -53,7 +53,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(serversArray[indexPath.row])
-        print("show item")
+       
         self.eventHandler?(.showItem(serversArray[indexPath.row]))
         
     }
@@ -71,14 +71,14 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func sortButtonTapped(_ sender: Any) {
         
-        let byDistanceAction = UIAlertAction(title: "By Distance", style: .default, handler: { _ in
+        let byDistanceAction = UIAlertAction(title: Constants.byDistance, style: .default, handler: { _ in
             self.distanceSort()
         })
         
-        let alpfaNumericalAction = UIAlertAction(title: "Alphanumerical", style: .default, handler: { _ in
+        let alpfaNumericalAction = UIAlertAction(title: Constants.alphanumerical, style: .default, handler: { _ in
             self.alphanumericalSort()
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Constants.cancel, style: .cancel, handler: nil)
         showAlert(title: nil, message: nil, preferredStyle: .actionSheet, actions: [byDistanceAction, alpfaNumericalAction, cancelAction])
         
     }
@@ -97,9 +97,8 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func getServers() {
        
-        let token = UserDefaultsContainer.sessionToken
-        let url = URL(string: "http://playground.tesonet.lt/v1/servers")!
-        let header: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        let url = URL(string: AppURL.getServers)!
+        let header: HTTPHeaders = [Headers.authorization : Headers.bearer]
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
             .validate(statusCode: 200..<300)
