@@ -9,8 +9,8 @@
 import Foundation
 
 struct AppURL {
-    static let getToken = "http://playground.tesonet.lt/v1/tokens"
-    static let getServers = "http://playground.tesonet.lt/v1/servers"
+    static let tokenUrl = "http://playground.tesonet.lt/v1/tokens"
+    static let serversUrl = "http://playground.tesonet.lt/v1/servers"
 }
 
 struct Key {

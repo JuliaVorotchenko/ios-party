@@ -14,16 +14,13 @@ enum ServersEvent {
     case showItem(ServersModel)
 }
 
-
-
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
     
     private var serversArray = [ServersModel]()
-    
+    var eventHandler: ((ServersEvent) -> ())?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var rootView: ServersView?
-    var eventHandler: ((ServersEvent) -> ())?
     
     static func startVC() -> ServersViewController {
         let controller = self.loadFromStoryboard()
@@ -37,7 +34,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         self.rootView?.setNavigationBar()
     }
     
-    // MARK: - Table view
+    // MARK: - Table view data source & delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.serversArray.count
@@ -52,10 +49,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(serversArray[indexPath.row])
-       
         self.eventHandler?(.showItem(serversArray[indexPath.row]))
-        
     }
     
     private func setTableVievDelegate() {
@@ -63,14 +57,13 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
     }
     
-    //MARK: - IBActions
-   
+    //MARK: - IBActions & sort
+    
     @IBAction func rightBarButtonTapped(_ sender: Any) {
         self.eventHandler?(.logout)
     }
     
     @IBAction func sortButtonTapped(_ sender: Any) {
-        
         let byDistanceAction = UIAlertAction(title: Constants.byDistance, style: .default, handler: { _ in
             self.distanceSort()
         })
@@ -80,7 +73,6 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         })
         let cancelAction = UIAlertAction(title: Constants.cancel, style: .cancel, handler: nil)
         showAlert(title: nil, message: nil, preferredStyle: .actionSheet, actions: [byDistanceAction, alpfaNumericalAction, cancelAction])
-        
     }
     
     func alphanumericalSort() {
@@ -93,11 +85,11 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
     
-    //MARK: Get request
-
+    //MARK: Get Servers
+    
     func getServers() {
-       
-        let url = URL(string: AppURL.getServers)!
+        
+        guard let url = URL(string: AppURL.serversUrl) else { return }
         let header: HTTPHeaders = [Headers.authorization : Headers.bearer]
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)

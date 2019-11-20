@@ -9,9 +9,6 @@
 import UIKit
 
 class AuthView: UIView, UITextFieldDelegate {
-
-
     @IBOutlet var userNameTextField: UITextField?
     @IBOutlet var passwordTextField: UITextField?
-
 }

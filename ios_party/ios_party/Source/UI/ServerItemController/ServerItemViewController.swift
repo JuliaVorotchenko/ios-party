@@ -15,12 +15,10 @@ enum ServerItemEvent {
 class ServerItemViewController: UIViewController, StoryboardLoadable {
     
     private var serversItem: ServersModel?
-    
-    @IBOutlet var rootView: ServerItemView!
     var eventHandler:  ((ServerItemEvent) -> ())?
+    @IBOutlet var rootView: ServerItemView!
     
     static func startVC(item: ServersModel) -> ServerItemViewController {
-        
         let controller = self.loadFromStoryboard()
         controller.serversItem = item
         return controller
@@ -31,15 +29,10 @@ class ServerItemViewController: UIViewController, StoryboardLoadable {
         self.serversItem.map {
             self.rootView.fill(model: $0)
         }
-       
     }
     
     //MARK: IBAction
     @IBAction func backToServersTapped(_ sender: UIBarButtonItem) {
         self.eventHandler?(.backToServers)
     }
-    
-  
-    
-    
 }
