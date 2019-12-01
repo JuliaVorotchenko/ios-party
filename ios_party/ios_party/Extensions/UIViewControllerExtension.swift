@@ -6,7 +6,6 @@
 //  Copyright © 2019 Юлия Воротченко. All rights reserved.
 //
 import UIKit
-import Foundation
 
   fileprivate var aView: UIView?
 

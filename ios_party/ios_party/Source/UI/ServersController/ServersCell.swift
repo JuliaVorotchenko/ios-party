@@ -15,12 +15,12 @@ class ServersCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        serverLabel.text = ""
-        distanceLabel.text = ""
+        self.serverLabel.text = ""
+        self.distanceLabel.text = ""
     }
     
     public func fill(with model: ServersModel) {
-        serverLabel.text = model.name
-        distanceLabel.text = "\(model.distance)" + " " + Constants.km
+        self.serverLabel.text = model.name
+        self.distanceLabel.text = "\(model.distance)" + " " + Constants.km
     }
 }

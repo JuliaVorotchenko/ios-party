@@ -18,17 +18,19 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     
     @IBOutlet var rootView: AuthView?
     
+    private var networking: Networking?
     
     var eventHandler: ((AuthEvent) -> ())?
     
-    static func startVC() -> AuthViewController {
+    static func startVC(networking: Networking) -> AuthViewController {
         let controller = self.loadFromStoryboard()
+        controller.networking = networking
         return controller
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldDelegateSet()
+        self.textFieldDelegateSet()
     }
     
     
@@ -41,40 +43,36 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     func getToken() {
         guard
             let username = rootView?.userNameTextField?.text,
-            let password = rootView?.passwordTextField?.text,
-            let url = URL(string: AppURL.tokenUrl)
+            let password = rootView?.passwordTextField?.text
+            
             else { return }
         
         let model = UserModel(username: username, password: password)
-        let parameters: [String: Any] = [Key.username: model.username, Key.password: model.password]
-        let header: HTTPHeaders = [Headers.contentType: Headers.value]
+        
         self.showSpinner()
-        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: [Headers.value])
-            .responseDecodable(of: TokenModel.self) { response in
-                switch response.result {
-                case .success(let token):
-                    UserDefaultsContainer.sessionToken = token.token
-                    self.eventHandler?(.login)
-                    
-                case .failure(let error):
-                    if let statusCode = response.response?.statusCode {
-                        if statusCode == 401 {
-                            let message = NetworkErrorModel(message: error.errorDescription!)
-                            self.eventHandler?(.error(message.message))
-                        }
-                    }
-                    self.hideSpinner()
-                }
+        
+        self.networking?.getToken(model: model) { [weak self] result in
+            switch result {
+                
+            case .success(let token):
+                UserDefaultsContainer.sessionToken = token.token
+                self?.eventHandler?(.login)
+                self?.hideSpinner()
+            case .failure(let error):
+                
+                self?.eventHandler?(.error(error.localizedDescription))
+                self?.hideSpinner()
+            
+            }
         }
+        
     }
     
     
     //MARK: - to hide keyboard
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -89,3 +87,4 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     }
     
 }
+

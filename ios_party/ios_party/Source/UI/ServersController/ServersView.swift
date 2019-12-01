@@ -12,6 +12,7 @@ class ServersView: UIView {
     
     //MARK: - UI elements
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var serversNavigationBar: UINavigationBar!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var sortButton: UIButton!
@@ -21,10 +22,5 @@ class ServersView: UIView {
     func setNavigationBar() {
         self.rightBarButton.image = UIImage(named: "ico-logout")
     }
-    
-    
-    
 
-    
-    
 }

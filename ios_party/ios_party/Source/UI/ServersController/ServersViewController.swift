@@ -19,7 +19,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     private var serversArray = [ServersModel]()
     var eventHandler: ((ServersEvent) -> ())?
     
-    @IBOutlet weak var tableView: UITableView!
+    //@IBOutlet weak var tableView: UITableView!
     @IBOutlet var rootView: ServersView?
     
     static func startVC() -> ServersViewController {
@@ -42,7 +42,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell, for: indexPath) as? ServersCell else { return UITableViewCell() }
-        let server = serversArray[indexPath.row]
+        let server = self.serversArray[indexPath.row]
         
         cell.fill(with: server)
         return cell
@@ -53,8 +53,8 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     private func setTableVievDelegate() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.rootView?.tableView.delegate = self
+        self.rootView?.tableView.dataSource = self
     }
     
     //MARK: - IBActions & sort
@@ -72,17 +72,17 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
             self.alphanumericalSort()
         })
         let cancelAction = UIAlertAction(title: Constants.cancel, style: .cancel, handler: nil)
-        showAlert(title: nil, message: nil, preferredStyle: .actionSheet, actions: [byDistanceAction, alpfaNumericalAction, cancelAction])
+        self.showAlert(title: nil, message: nil, preferredStyle: .actionSheet, actions: [byDistanceAction, alpfaNumericalAction, cancelAction])
     }
     
     func alphanumericalSort() {
-        serversArray.sort(by: { $0.name < $1.name })
-        tableView.reloadData()
+        self.serversArray.sort(by: { $0.name < $1.name })
+        self.rootView?.tableView.reloadData()
     }
     
     func distanceSort() {
-        serversArray.sort(by: { $0.distance < $1.distance })
-        tableView.reloadData()
+        self.serversArray.sort(by: { $0.distance < $1.distance })
+        self.rootView?.tableView.reloadData()
     }
     
     //MARK: Get Servers
@@ -98,7 +98,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
                 switch response.result {
                 case .success(let servers):
                     self.serversArray = servers
-                    self.tableView.reloadData()
+                    self.rootView?.tableView.reloadData()
                 case .failure(let error):
                     if let statusCode = response.response?.statusCode {
                         if statusCode == 401 {

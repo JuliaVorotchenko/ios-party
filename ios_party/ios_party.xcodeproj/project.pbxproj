@@ -21,6 +21,7 @@
 		CDA67D1E236A2E1A00CB10D0 /* NetworkErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */; };
 		CDBAC9C32375C8C700BE3926 /* ServersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC9C22375C8C700BE3926 /* ServersModel.swift */; };
 		CDD9ABA32384868E00ACA769 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9ABA22384868E00ACA769 /* AppConstants.swift */; };
+		CDD9EE67239424E8006A4290 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9EE66239424E8006A4290 /* Networking.swift */; };
 		CDF853FC235C88B9001132C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853FB235C88B9001132C7 /* AppDelegate.swift */; };
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
 		CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorModel.swift; sourceTree = "<group>"; };
 		CDBAC9C22375C8C700BE3926 /* ServersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersModel.swift; sourceTree = "<group>"; };
 		CDD9ABA22384868E00ACA769 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		CDD9EE66239424E8006A4290 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		CDF853F8235C88B9001132C7 /* ios_party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF853FB235C88B9001132C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF85404235C88BA001132C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 			path = AppConstants;
 			sourceTree = "<group>";
 		};
+		CDD9EE65239424D3006A4290 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CDD9EE66239424E8006A4290 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		CDF853EF235C88B9001132C7 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		CDF8540F235C8EBA001132C7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CDD9EE65239424D3006A4290 /* Networking */,
 				CDD9ABA12384705000ACA769 /* AppConstants */,
 				CDA67CCF23679B8300CB10D0 /* UserDefaultsContainer */,
 				CDA67CC7236751C500CB10D0 /* Models */,
@@ -201,9 +212,9 @@
 		CDF85410235C8EDC001132C7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CD4A3B25237AD44C006D5E2E /* ServerItemController */,
-				CDA67CD223684A3D00CB10D0 /* ServersController */,
 				CDF85411235C8EF7001132C7 /* AuthController */,
+				CDA67CD223684A3D00CB10D0 /* ServersController */,
+				CD4A3B25237AD44C006D5E2E /* ServerItemController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 				CDA67D1E236A2E1A00CB10D0 /* NetworkErrorModel.swift in Sources */,
 				CD74E07D237F2B0100452FC1 /* ServerItemViewController.swift in Sources */,
 				CD4A3B29237AD4BC006D5E2E /* ServerItemView.swift in Sources */,
+				CDD9EE67239424E8006A4290 /* Networking.swift in Sources */,
 				CDF85413235C8F40001132C7 /* AuthViewController.swift in Sources */,
 				CDF85421235CBCB9001132C7 /* StoryboardLoadable.swift in Sources */,
 				CDF8541F235CBADF001132C7 /* AppConfigurator.swift in Sources */,

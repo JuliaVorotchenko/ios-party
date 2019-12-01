@@ -11,7 +11,7 @@ import UIKit
   class AppCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    
+    private let networking = Networking()
     var authController: AuthViewController?
     var serversController: ServersViewController?
     var serverItemViewController: ServerItemViewController?
@@ -31,7 +31,7 @@ import UIKit
     }
     
     private func createAuthController() {
-        let controller = AuthViewController.startVC()
+        let controller = AuthViewController.startVC(networking: self.networking)
         
         self.authController = controller
         self.navigationController.viewControllers = [controller]
