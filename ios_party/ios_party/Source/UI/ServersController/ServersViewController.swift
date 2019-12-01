@@ -17,19 +17,21 @@ enum ServersEvent {
 class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
     
     private var serversArray = [ServersModel]()
+    private var networking: Networking?
     var eventHandler: ((ServersEvent) -> ())?
     
     //@IBOutlet weak var tableView: UITableView!
     @IBOutlet var rootView: ServersView?
     
-    static func startVC() -> ServersViewController {
+    static func startVC(networking: Networking) -> ServersViewController {
         let controller = self.loadFromStoryboard()
+        controller.networking = networking
         return controller
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getServers()
+        self.getServersList()
         self.setTableVievDelegate()
         self.rootView?.setNavigationBar()
     }
@@ -87,25 +89,19 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: Get Servers
     
-    func getServers() {
-        
-        guard let url = URL(string: AppURL.serversUrl) else { return }
-        let header: HTTPHeaders = [Headers.authorization : Headers.bearer]
-        
-        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
-            .validate(statusCode: 200..<300)
-            .responseDecodable(of: [ServersModel].self) { response in
-                switch response.result {
-                case .success(let servers):
-                    self.serversArray = servers
-                    self.rootView?.tableView.reloadData()
-                case .failure(let error):
-                    if let statusCode = response.response?.statusCode {
-                        if statusCode == 401 {
-                            print(error.errorDescription)
-                        }
-                    }
-                }
+    func getServersList() {
+        self.showSpinner()
+        self.networking?.getServers { [weak self] result in
+            switch result {
+            case .success(let servers):
+                self?.serversArray = servers
+                self?.rootView?.tableView.reloadData()
+                self?.hideSpinner()
+            case .failure(let error):
+                print(error.errorDescription)
+            }
         }
+        
+        
     }
 }

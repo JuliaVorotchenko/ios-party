@@ -16,11 +16,11 @@ enum AuthEvent {
 
 class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDelegate {
     
-    @IBOutlet var rootView: AuthView?
     
     private var networking: Networking?
-    
     var eventHandler: ((AuthEvent) -> ())?
+    
+    @IBOutlet var rootView: AuthView?
     
     static func startVC(networking: Networking) -> AuthViewController {
         let controller = self.loadFromStoryboard()
@@ -33,10 +33,7 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
         self.textFieldDelegateSet()
     }
     
-    
-    
     @IBAction func onLogin(_ sender: UIButton) {
-        
         self.getToken()
     }
     
@@ -44,30 +41,21 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
         guard
             let username = rootView?.userNameTextField?.text,
             let password = rootView?.passwordTextField?.text
-            
             else { return }
-        
         let model = UserModel(username: username, password: password)
-        
         self.showSpinner()
-        
         self.networking?.getToken(model: model) { [weak self] result in
             switch result {
-                
             case .success(let token):
                 UserDefaultsContainer.sessionToken = token.token
                 self?.eventHandler?(.login)
                 self?.hideSpinner()
             case .failure(let error):
-                
                 self?.eventHandler?(.error(error.localizedDescription))
                 self?.hideSpinner()
-            
             }
         }
-        
     }
-    
     
     //MARK: - to hide keyboard
     

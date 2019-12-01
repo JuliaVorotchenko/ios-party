@@ -11,10 +11,8 @@ import UIKit
 class ServerItemView: UIView {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
-   
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var distance: UILabel!
-    
     
     func fill(model: ServersModel) {
         self.name.text = model.name

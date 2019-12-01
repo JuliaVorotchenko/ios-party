@@ -7,7 +7,7 @@
 //
 import UIKit
 
-  fileprivate var aView: UIView?
+  fileprivate var activityIndicatorView: UIView?
 
 extension UIViewController {
 
@@ -18,7 +18,6 @@ extension UIViewController {
     }
     
     private typealias Text = AppTextConstants
-    
     
     func showAlert(title: String?,
                    message: String? = nil,
@@ -48,20 +47,19 @@ extension UIViewController {
     }
     
     func showSpinner() {
-        aView = UIView(frame: self.view.bounds)
-        aView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        
-        let ai = UIActivityIndicatorView(style: .large)
-        ai.center = aView!.center
-        ai.startAnimating()
-        aView?.addSubview(ai)
-        self.view.addSubview(aView!)
-        print("show spinner")
+        activityIndicatorView = UIView(frame: self.view.bounds)
+        activityIndicatorView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = activityIndicatorView!.center
+        activityIndicator.startAnimating()
+        activityIndicatorView?.addSubview(activityIndicator)
+        self.view.addSubview(activityIndicatorView!)
+    
     }
     
     func hideSpinner() {
-        aView?.removeFromSuperview()
-        aView = nil
+        activityIndicatorView?.removeFromSuperview()
+        activityIndicatorView = nil
     }
      
 }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-  class AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    private let networking = Networking()
     var authController: AuthViewController?
     var serversController: ServersViewController?
     var serverItemViewController: ServerItemViewController?
+    private let networking = Networking()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -26,45 +26,37 @@ import UIKit
         } else {
             self.createServersViewController()
         }
-       
-        
     }
     
     private func createAuthController() {
         let controller = AuthViewController.startVC(networking: self.networking)
-        
         self.authController = controller
         self.navigationController.viewControllers = [controller]
-        
         controller.eventHandler = { [weak self] event in
             switch event {
             case .login:
-               
                 self?.createServersViewController()
-                 self?.authController = nil
+                self?.authController = nil
             case .error(let errorMessage):
                 self?.showAlertError(with: errorMessage)
             }
         }
     }
     
-    
     private func createServersViewController() {
-        
-        let controller = ServersViewController.startVC()
+        let controller = ServersViewController.startVC(networking: networking)
         self.navigationController.viewControllers = [controller]
         controller.eventHandler = { [weak self] event in
-             switch event {
-             
-             case .logout:
+            switch event {
+            case .logout:
                 UserDefaultsContainer.unregister()
                 self?.createAuthController()
-             case .showItem(let item):
+            case .showItem(let item):
                 self?.createServersItemViewController(with: item)
-               
-             }
-             
-         }
+                
+            }
+            
+        }
     }
     
     private func createServersItemViewController(with item: ServersModel) {
@@ -75,10 +67,8 @@ import UIKit
             case .backToServers:
                 self?.navigationController.popViewController(animated: true)
             }
-            
         }
     }
-   
     
     private func showAlertError(with message: String) {
         self.navigationController.showAlert(title: message)
