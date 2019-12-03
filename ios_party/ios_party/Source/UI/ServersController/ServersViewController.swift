@@ -20,7 +20,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     private var networking: Networking?
     var eventHandler: ((ServersEvent) -> ())?
     
-    //@IBOutlet weak var tableView: UITableView!
+   
     @IBOutlet var rootView: ServersView?
     
     static func startVC(networking: Networking) -> ServersViewController {
