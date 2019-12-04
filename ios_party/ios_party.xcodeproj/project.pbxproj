@@ -27,7 +27,6 @@
 		CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF85404235C88BA001132C7 /* Assets.xcassets */; };
 		CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85406235C88BA001132C7 /* LaunchScreen.storyboard */; };
 		CDF85413235C8F40001132C7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF85412235C8F40001132C7 /* AuthViewController.swift */; };
-		CDF85415235C8F5B001132C7 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF85414235C8F5B001132C7 /* AuthViewController.storyboard */; };
 		CDF85418235CA9AF001132C7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF85417235CA9AF001132C7 /* AppCoordinator.swift */; };
 		CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF85419235CB784001132C7 /* SceneDelegate.swift */; };
 		CDF8541D235CBA9B001132C7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8541C235CBA9B001132C7 /* Coordinator.swift */; };
@@ -63,7 +62,6 @@
 		CDF85407235C88BA001132C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDF85409235C88BA001132C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDF85412235C8F40001132C7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		CDF85414235C8F5B001132C7 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		CDF85417235CA9AF001132C7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CDF85419235CB784001132C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CDF8541C235CBA9B001132C7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				CDF85412235C8F40001132C7 /* AuthViewController.swift */,
-				CDF85414235C8F5B001132C7 /* AuthViewController.storyboard */,
 				CDF85422235CBD0C001132C7 /* AuthView.swift */,
 				CD7E49EC239841B400C554B2 /* AuthView.xib */,
 			);
@@ -314,7 +311,6 @@
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */,
 				CD4A3B2F237AF424006D5E2E /* ServerItemViewController.storyboard in Resources */,
-				CDF85415235C8F5B001132C7 /* AuthViewController.storyboard in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

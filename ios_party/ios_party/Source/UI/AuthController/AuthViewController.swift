@@ -17,7 +17,7 @@ enum AuthEvent {
 class AuthViewController: UIViewController, UITextFieldDelegate {
     
     
-    private var networking: Networking?
+    private var networking = Networking()
     var eventHandler: ((AuthEvent) -> ())?
     
     @IBOutlet var rootView: AuthView?
@@ -44,7 +44,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             else { return }
         let model = UserModel(username: username, password: password)
         self.showSpinner()
-        self.networking?.getToken(model: model) { [weak self] result in
+        self.networking.getToken(model: model) { [weak self] result in
             switch result {
             case .success(let token):
                 UserDefaultsContainer.sessionToken = token.token
