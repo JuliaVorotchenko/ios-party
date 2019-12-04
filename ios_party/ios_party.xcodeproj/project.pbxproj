@@ -11,6 +11,8 @@
 		CD4A3B2F237AF424006D5E2E /* ServerItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4A3B2E237AF424006D5E2E /* ServerItemViewController.storyboard */; };
 		CD74E07D237F2B0100452FC1 /* ServerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */; };
 		CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EC239841B400C554B2 /* AuthView.xib */; };
+		CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EE239846E300C554B2 /* ServersView.xib */; };
+		CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F02398474B00C554B2 /* ServersCell.xib */; };
 		CD8B45102373437E001739F2 /* ServersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* ServersCell.swift */; };
 		CDA67CC92367526C00CB10D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CC82367526C00CB10D0 /* TokenModel.swift */; };
 		CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCA2367527800CB10D0 /* UserModel.swift */; };
@@ -44,6 +46,8 @@
 		CD4A3B2E237AF424006D5E2E /* ServerItemViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerItemViewController.storyboard; sourceTree = "<group>"; };
 		CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemViewController.swift; sourceTree = "<group>"; };
 		CD7E49EC239841B400C554B2 /* AuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
+		CD7E49EE239846E300C554B2 /* ServersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersView.xib; sourceTree = "<group>"; };
+		CD7E49F02398474B00C554B2 /* ServersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersCell.xib; sourceTree = "<group>"; };
 		CD8B450F2373437E001739F2 /* ServersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersCell.swift; sourceTree = "<group>"; };
 		CDA67CC82367526C00CB10D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		CDA67CCA2367527800CB10D0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -139,10 +143,12 @@
 		CDA67CD223684A3D00CB10D0 /* ServersController */ = {
 			isa = PBXGroup;
 			children = (
-				CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */,
-				CD8B450F2373437E001739F2 /* ServersCell.swift */,
 				CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */,
+				CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */,
 				CDA67CD723684D7600CB10D0 /* ServersView.swift */,
+				CD8B450F2373437E001739F2 /* ServersCell.swift */,
+				CD7E49EE239846E300C554B2 /* ServersView.xib */,
+				CD7E49F02398474B00C554B2 /* ServersCell.xib */,
 			);
 			path = ServersController;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				CDA67CD623684D5700CB10D0 /* ServersViewController.storyboard in Resources */,
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */,
+				CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */,
+				CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */,
 				CD4A3B2F237AF424006D5E2E /* ServerItemViewController.storyboard in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,
 			);

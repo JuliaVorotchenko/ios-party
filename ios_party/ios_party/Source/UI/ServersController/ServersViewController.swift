@@ -14,26 +14,27 @@ enum ServersEvent {
     case showItem(ServersModel)
 }
 
-class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardLoadable {
+class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var serversArray = [ServersModel]()
-    private var networking: Networking?
+    private var networking = Networking()
     var eventHandler: ((ServersEvent) -> ())?
     
    
     @IBOutlet var rootView: ServersView?
     
-    static func startVC(networking: Networking) -> ServersViewController {
-        let controller = self.loadFromStoryboard()
-        controller.networking = networking
-        return controller
-    }
+//    static func startVC(networking: Networking) -> ServersViewController {
+//        let controller = self.loadFromStoryboard()
+//        controller.networking = networking
+//        return controller
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getServersList()
         self.setTableVievDelegate()
         self.rootView?.setNavigationBar()
+        self.rootView?.tableView.register(UINib(nibName: "ServersCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
     
     // MARK: - Table view data source & delegate
@@ -91,7 +92,7 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func getServersList() {
         self.showSpinner()
-        self.networking?.getServers { [weak self] result in
+        self.networking.getServers { [weak self] result in
             switch result {
             case .success(let servers):
                 self?.serversArray = servers

@@ -44,7 +44,7 @@ class AppCoordinator: Coordinator {
     }
     
     private func createServersViewController() {
-        let controller = ServersViewController.startVC(networking: networking)
+        let controller = ServersViewController()
         self.navigationController.viewControllers = [controller]
         controller.eventHandler = { [weak self] event in
             switch event {
