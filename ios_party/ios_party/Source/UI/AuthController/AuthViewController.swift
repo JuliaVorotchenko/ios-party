@@ -14,7 +14,7 @@ enum AuthEvent {
     case error(String)
 }
 
-class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDelegate {
+class AuthViewController: UIViewController, UITextFieldDelegate {
     
     
     private var networking: Networking?
@@ -22,11 +22,11 @@ class AuthViewController: UIViewController, StoryboardLoadable, UITextFieldDeleg
     
     @IBOutlet var rootView: AuthView?
     
-    static func startVC(networking: Networking) -> AuthViewController {
-        let controller = self.loadFromStoryboard()
-        controller.networking = networking
-        return controller
-    }
+//    static func startVC(networking: Networking) -> AuthViewController {
+//        let controller = self.loadFromStoryboard()
+//        controller.networking = networking
+//        return controller
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,7 +29,7 @@ class AppCoordinator: Coordinator {
     }
     
     private func createAuthController() {
-        let controller = AuthViewController.startVC(networking: self.networking)
+        let controller = AuthViewController()
         self.authController = controller
         self.navigationController.viewControllers = [controller]
         controller.eventHandler = { [weak self] event in
