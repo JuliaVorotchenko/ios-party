@@ -35,6 +35,9 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
         self.setTableVievDelegate()
         self.rootView?.setNavigationBar()
         self.rootView?.tableView.register(UINib(nibName: "ServersCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        self.rootView?.tableView.reloadData()
+        
+        
     }
     
     // MARK: - Table view data source & delegate

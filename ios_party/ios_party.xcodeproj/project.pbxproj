@@ -19,7 +19,6 @@
 		CDA67CCE2367986900CB10D0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */; };
 		CDA67CD123679BA700CB10D0 /* UserDefaultsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */; };
 		CDA67CD423684D3D00CB10D0 /* ServersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */; };
-		CDA67CD623684D5700CB10D0 /* ServersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */; };
 		CDA67CD823684D7600CB10D0 /* ServersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CD723684D7600CB10D0 /* ServersView.swift */; };
 		CDA67D1E236A2E1A00CB10D0 /* NetworkErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */; };
 		CDBAC9C32375C8C700BE3926 /* ServersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC9C22375C8C700BE3926 /* ServersModel.swift */; };
@@ -54,7 +53,6 @@
 		CDA67CCD2367986900CB10D0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CDA67CD023679BA700CB10D0 /* UserDefaultsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsContainer.swift; sourceTree = "<group>"; };
 		CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersViewController.swift; sourceTree = "<group>"; };
-		CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServersViewController.storyboard; sourceTree = "<group>"; };
 		CDA67CD723684D7600CB10D0 /* ServersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersView.swift; sourceTree = "<group>"; };
 		CDA67D1D236A2E1A00CB10D0 /* NetworkErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorModel.swift; sourceTree = "<group>"; };
 		CDBAC9C22375C8C700BE3926 /* ServersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersModel.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 		CDA67CD223684A3D00CB10D0 /* ServersController */ = {
 			isa = PBXGroup;
 			children = (
-				CDA67CD523684D5700CB10D0 /* ServersViewController.storyboard */,
 				CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */,
 				CDA67CD723684D7600CB10D0 /* ServersView.swift */,
 				CD8B450F2373437E001739F2 /* ServersCell.swift */,
@@ -313,7 +310,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA67CD623684D5700CB10D0 /* ServersViewController.storyboard in Resources */,
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */,
 				CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */,
