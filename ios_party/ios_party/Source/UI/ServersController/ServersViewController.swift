@@ -22,22 +22,13 @@ class ServersViewController: UIViewController, UITableViewDataSource, UITableVie
     
    
     @IBOutlet var rootView: ServersView?
-    
-//    static func startVC(networking: Networking) -> ServersViewController {
-//        let controller = self.loadFromStoryboard()
-//        controller.networking = networking
-//        return controller
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getServersList()
         self.setTableVievDelegate()
         self.rootView?.setNavigationBar()
         self.rootView?.tableView.register(UINib(nibName: "ServersCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        self.rootView?.tableView.reloadData()
-        
-        
     }
     
     // MARK: - Table view data source & delegate

@@ -16,17 +16,10 @@ enum AuthEvent {
 
 class AuthViewController: UIViewController, UITextFieldDelegate {
     
-    
     private var networking = Networking()
     var eventHandler: ((AuthEvent) -> ())?
     
     @IBOutlet var rootView: AuthView?
-    
-//    static func startVC(networking: Networking) -> AuthViewController {
-//        let controller = self.loadFromStoryboard()
-//        controller.networking = networking
-//        return controller
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

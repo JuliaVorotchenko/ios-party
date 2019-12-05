@@ -18,12 +18,6 @@ class ServerItemViewController: UIViewController {
     var eventHandler:  ((ServerItemEvent) -> ())?
     @IBOutlet var rootView: ServerItemView!
     
-//    static func startVC(item: ServersModel) -> ServerItemViewController {
-//        let controller = self.loadFromStoryboard()
-//        controller.serversItem = item
-//        return controller
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.serversItem.map {
