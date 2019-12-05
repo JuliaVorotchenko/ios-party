@@ -12,17 +12,17 @@ enum ServerItemEvent {
     case backToServers
 }
 
-class ServerItemViewController: UIViewController, StoryboardLoadable {
+class ServerItemViewController: UIViewController {
     
-    private var serversItem: ServersModel?
+    var serversItem: ServersModel?
     var eventHandler:  ((ServerItemEvent) -> ())?
     @IBOutlet var rootView: ServerItemView!
     
-    static func startVC(item: ServersModel) -> ServerItemViewController {
-        let controller = self.loadFromStoryboard()
-        controller.serversItem = item
-        return controller
-    }
+//    static func startVC(item: ServersModel) -> ServerItemViewController {
+//        let controller = self.loadFromStoryboard()
+//        controller.serversItem = item
+//        return controller
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

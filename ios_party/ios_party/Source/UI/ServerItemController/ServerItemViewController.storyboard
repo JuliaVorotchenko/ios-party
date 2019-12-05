@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <scene sceneID="6lh-ZO-50s">
             <objects>
                 <viewController storyboardIdentifier="ServerItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbm-hq-jnY" customClass="ServerItemViewController" customModule="ios_party" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xCf-CW-rbl" customClass="ServerItemView" customModule="ios_party" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="xCf-CW-rbl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -19,11 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Server" largeTitleDisplayMode="always" id="wr0-t8-NUU">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="lye-AI-hxd">
-                                            <connections>
-                                                <action selector="backToServersTapped:" destination="kbm-hq-jnY" id="vVE-uW-j43"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="lye-AI-hxd"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -71,15 +67,7 @@
                             <constraint firstItem="soI-Uh-CaB" firstAttribute="top" secondItem="WDx-8r-wMT" secondAttribute="bottom" constant="25" id="zBv-Ov-nb0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ap1-vk-Zvr"/>
-                        <connections>
-                            <outlet property="distance" destination="NZA-bn-es6" id="WwH-xw-oo0"/>
-                            <outlet property="name" destination="vRs-ZK-T2z" id="GwS-j3-C8b"/>
-                            <outlet property="navigationBar" destination="WDx-8r-wMT" id="q93-Wz-Dku"/>
-                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="rootView" destination="xCf-CW-rbl" id="949-Jt-xh5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWx-Hq-fAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

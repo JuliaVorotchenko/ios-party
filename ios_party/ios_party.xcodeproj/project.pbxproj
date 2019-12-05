@@ -13,6 +13,7 @@
 		CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EC239841B400C554B2 /* AuthView.xib */; };
 		CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EE239846E300C554B2 /* ServersView.xib */; };
 		CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F02398474B00C554B2 /* ServersCell.xib */; };
+		CD7E49F323991E9800C554B2 /* ServerItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F223991E9800C554B2 /* ServerItemView.xib */; };
 		CD8B45102373437E001739F2 /* ServersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* ServersCell.swift */; };
 		CDA67CC92367526C00CB10D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CC82367526C00CB10D0 /* TokenModel.swift */; };
 		CDA67CCB2367527800CB10D0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA67CCA2367527800CB10D0 /* UserModel.swift */; };
@@ -47,6 +48,7 @@
 		CD7E49EC239841B400C554B2 /* AuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
 		CD7E49EE239846E300C554B2 /* ServersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersView.xib; sourceTree = "<group>"; };
 		CD7E49F02398474B00C554B2 /* ServersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersCell.xib; sourceTree = "<group>"; };
+		CD7E49F223991E9800C554B2 /* ServerItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerItemView.xib; sourceTree = "<group>"; };
 		CD8B450F2373437E001739F2 /* ServersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersCell.swift; sourceTree = "<group>"; };
 		CDA67CC82367526C00CB10D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		CDA67CCA2367527800CB10D0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */,
 				CD4A3B2E237AF424006D5E2E /* ServerItemViewController.storyboard */,
 				CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */,
+				CD7E49F223991E9800C554B2 /* ServerItemView.xib */,
 			);
 			path = ServerItemController;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
+				CD7E49F323991E9800C554B2 /* ServerItemView.xib in Resources */,
 				CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */,
 				CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */,
 				CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */,
