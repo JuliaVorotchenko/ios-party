@@ -61,8 +61,7 @@ class AppCoordinator: Coordinator {
     
     private func createServersItemViewController(with item: ServersModel) {
         let controller = ServerItemViewController()
-        controller.serversItem = item
-        
+        controller.setServerItem(item: item)
         self.navigationController.pushViewController(controller, animated: true)
         controller.eventHandler = { [weak self] event in
             switch event {

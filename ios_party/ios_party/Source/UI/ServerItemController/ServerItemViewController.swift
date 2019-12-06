@@ -14,7 +14,7 @@ enum ServerItemEvent {
 
 class ServerItemViewController: UIViewController {
     
-    var serversItem: ServersModel?
+    private var serversItem: ServersModel?
     var eventHandler:  ((ServerItemEvent) -> ())?
     @IBOutlet var rootView: ServerItemView!
     
@@ -28,5 +28,9 @@ class ServerItemViewController: UIViewController {
     //MARK: IBAction
     @IBAction func backToServersTapped(_ sender: UIBarButtonItem) {
         self.eventHandler?(.backToServers)
+    }
+    
+    func setServerItem(item: ServersModel) {
+        self.serversItem = item
     }
 }
