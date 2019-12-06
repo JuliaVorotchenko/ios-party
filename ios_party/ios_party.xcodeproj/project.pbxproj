@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD4A3B29237AD4BC006D5E2E /* ServerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */; };
 		CD74E07D237F2B0100452FC1 /* ServerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */; };
-		CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EC239841B400C554B2 /* AuthView.xib */; };
+		CD7E49ED239841B400C554B2 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EC239841B400C554B2 /* AuthViewController.xib */; };
 		CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EE239846E300C554B2 /* ServersView.xib */; };
 		CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F02398474B00C554B2 /* ServersCell.xib */; };
 		CD7E49F323991E9800C554B2 /* ServerItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F223991E9800C554B2 /* ServerItemView.xib */; };
@@ -43,7 +43,7 @@
 		5E4E8445BD1ADE40D3CB1EE5 /* Pods-ios_party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_party.release.xcconfig"; path = "Target Support Files/Pods-ios_party/Pods-ios_party.release.xcconfig"; sourceTree = "<group>"; };
 		CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemView.swift; sourceTree = "<group>"; };
 		CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemViewController.swift; sourceTree = "<group>"; };
-		CD7E49EC239841B400C554B2 /* AuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
+		CD7E49EC239841B400C554B2 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		CD7E49EE239846E300C554B2 /* ServersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersView.xib; sourceTree = "<group>"; };
 		CD7E49F02398474B00C554B2 /* ServersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersCell.xib; sourceTree = "<group>"; };
 		CD7E49F223991E9800C554B2 /* ServerItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerItemView.xib; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			children = (
 				CDF85412235C8F40001132C7 /* AuthViewController.swift */,
 				CDF85422235CBD0C001132C7 /* AuthView.swift */,
-				CD7E49EC239841B400C554B2 /* AuthView.xib */,
+				CD7E49EC239841B400C554B2 /* AuthViewController.xib */,
 			);
 			path = AuthController;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			files = (
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CD7E49F323991E9800C554B2 /* ServerItemView.xib in Resources */,
-				CD7E49ED239841B400C554B2 /* AuthView.xib in Resources */,
+				CD7E49ED239841B400C554B2 /* AuthViewController.xib in Resources */,
 				CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */,
 				CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,

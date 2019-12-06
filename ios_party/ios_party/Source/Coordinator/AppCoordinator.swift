@@ -29,9 +29,11 @@ class AppCoordinator: Coordinator {
     }
     
     private func createAuthController() {
-        let controller = AuthViewController()
+        let controller = AuthViewController(networking: self.networking)
         self.authController = controller
+        
         self.navigationController.viewControllers = [controller]
+    
         controller.eventHandler = { [weak self] event in
             switch event {
             case .login:

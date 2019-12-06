@@ -14,12 +14,24 @@ enum AuthEvent {
     case error(String)
 }
 
-class AuthViewController: UIViewController, UITextFieldDelegate {
-    
-    private var networking = Networking()
-    var eventHandler: ((AuthEvent) -> ())?
+
+
+final class AuthViewController: UIViewController, UITextFieldDelegate {
+
+    private let networking: Networking
+    private(set) var eventHandler: ((AuthEvent) -> ())?
     
     @IBOutlet var rootView: AuthView?
+    
+    init(networking: Networking) {
+        self.networking = networking
+        super.init(nibName: "AuthViewController", bundle: nil)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +42,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         self.getToken()
     }
     
-    func getToken() {
+    private func getToken() {
         guard
             let username = rootView?.userNameTextField?.text,
             let password = rootView?.passwordTextField?.text
