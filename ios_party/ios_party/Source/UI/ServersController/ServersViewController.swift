@@ -20,9 +20,16 @@ final class ServersViewController: UIViewController, UITableViewDataSource, UITa
     private var networking = Networking()
     var eventHandler: ((ServersEvent) -> ())?
     
-   
-    @IBOutlet var rootView: ServersView?
-
+   @IBOutlet var rootView: ServersView?
+    
+    init() {
+        super.init(nibName: "ServersView", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getServersList()
