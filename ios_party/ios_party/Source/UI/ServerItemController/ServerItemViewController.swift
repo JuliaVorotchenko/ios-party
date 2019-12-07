@@ -39,7 +39,4 @@ final class ServerItemViewController: UIViewController {
         self.eventHandler?(.backToServers)
     }
     
-//    func setServerItem(item: ServersModel) {
-//        self.serversItem = item
-//    }
 }
