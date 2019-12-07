@@ -18,8 +18,8 @@ enum AuthEvent {
 
 final class AuthViewController: UIViewController, UITextFieldDelegate {
 
-    private let networking: Networking
-    private(set) var eventHandler: ((AuthEvent) -> ())?
+    private(set) var networking: Networking
+    var eventHandler: ((AuthEvent) -> ())?
     
     @IBOutlet var rootView: AuthView?
     

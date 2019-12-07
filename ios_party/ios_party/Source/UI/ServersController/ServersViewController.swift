@@ -14,7 +14,7 @@ enum ServersEvent {
     case showItem(ServersModel)
 }
 
-class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var serversArray = [ServersModel]()
     private var networking = Networking()

@@ -12,11 +12,20 @@ enum ServerItemEvent {
     case backToServers
 }
 
-class ServerItemViewController: UIViewController {
+final class ServerItemViewController: UIViewController {
     
     private var serversItem: ServersModel?
     var eventHandler:  ((ServerItemEvent) -> ())?
     @IBOutlet var rootView: ServerItemView!
+    
+    init(with item: ServersModel) {
+        self.serversItem = item
+        super.init(nibName: "ServerItemViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +39,7 @@ class ServerItemViewController: UIViewController {
         self.eventHandler?(.backToServers)
     }
     
-    func setServerItem(item: ServersModel) {
-        self.serversItem = item
-    }
+//    func setServerItem(item: ServersModel) {
+//        self.serversItem = item
+//    }
 }
