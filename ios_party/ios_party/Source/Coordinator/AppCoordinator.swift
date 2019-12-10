@@ -29,19 +29,22 @@ class AppCoordinator: Coordinator {
     }
     
     private func createAuthController() {
-        let controller = AuthViewController(networking: self.networking)
+        let controller = AuthViewController(networking: self.networking, event: self.authEvent)
         self.authController = controller
         
         self.navigationController.viewControllers = [controller]
+
+        
+    }
     
-        controller.eventHandler = { [weak self] event in
-            switch event {
-            case .login:
-                self?.createServersViewController()
-                self?.authController = nil
-            case .error(let errorMessage):
-                self?.showAlertError(with: errorMessage)
-            }
+    private func authEvent(_ event: AuthEvent) {
+        
+        switch event {
+        case .login:
+            self.createServersViewController()
+            self.authController = nil
+        case .error(let errorMessage):
+            self.showAlertError(with: errorMessage)
         }
     }
     
@@ -54,22 +57,25 @@ class AppCoordinator: Coordinator {
                 UserDefaultsContainer.unregister()
                 self?.createAuthController()
             case .showItem(let item):
-                self?.createServersItemViewController(with: item)
+                self?.createServerItemViewController(with: item)
                 
             }
             
         }
     }
     
-    private func createServersItemViewController(with item: ServersModel) {
-        let controller = ServerItemViewController(with: item)
+    private func createServerItemViewController(with item: ServersModel) {
+        let controller = ServerItemViewController(with: item, eventHandler: self.serverItemEvent)
         
         self.navigationController.pushViewController(controller, animated: true)
-        controller.eventHandler = { [weak self] event in
-            switch event {
-            case .backToServers:
-                self?.navigationController.popViewController(animated: true)
-            }
+    
+        
+    }
+    
+    private func serverItemEvent(_ event: ServerItemEvent) {
+        switch event {
+        case .backToServers:
+            self.navigationController.popViewController(animated: true)
         }
     }
     
