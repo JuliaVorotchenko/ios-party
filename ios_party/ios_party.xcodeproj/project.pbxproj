@@ -10,7 +10,7 @@
 		CD4A3B29237AD4BC006D5E2E /* ServerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */; };
 		CD74E07D237F2B0100452FC1 /* ServerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */; };
 		CD7E49ED239841B400C554B2 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EC239841B400C554B2 /* AuthViewController.xib */; };
-		CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EE239846E300C554B2 /* ServersView.xib */; };
+		CD7E49EF239846E300C554B2 /* ServersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EE239846E300C554B2 /* ServersViewController.xib */; };
 		CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F02398474B00C554B2 /* ServersCell.xib */; };
 		CD7E49F323991E9800C554B2 /* ServerItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49F223991E9800C554B2 /* ServerItemViewController.xib */; };
 		CD8B45102373437E001739F2 /* ServersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8B450F2373437E001739F2 /* ServersCell.swift */; };
@@ -44,7 +44,7 @@
 		CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemView.swift; sourceTree = "<group>"; };
 		CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemViewController.swift; sourceTree = "<group>"; };
 		CD7E49EC239841B400C554B2 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
-		CD7E49EE239846E300C554B2 /* ServersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersView.xib; sourceTree = "<group>"; };
+		CD7E49EE239846E300C554B2 /* ServersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersViewController.xib; sourceTree = "<group>"; };
 		CD7E49F02398474B00C554B2 /* ServersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServersCell.xib; sourceTree = "<group>"; };
 		CD7E49F223991E9800C554B2 /* ServerItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerItemViewController.xib; sourceTree = "<group>"; };
 		CD8B450F2373437E001739F2 /* ServersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersCell.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				CDA67CD323684D3D00CB10D0 /* ServersViewController.swift */,
 				CDA67CD723684D7600CB10D0 /* ServersView.swift */,
 				CD8B450F2373437E001739F2 /* ServersCell.swift */,
-				CD7E49EE239846E300C554B2 /* ServersView.xib */,
+				CD7E49EE239846E300C554B2 /* ServersViewController.xib */,
 				CD7E49F02398474B00C554B2 /* ServersCell.xib */,
 			);
 			path = ServersController;
@@ -313,7 +313,7 @@
 				CDF85408235C88BA001132C7 /* LaunchScreen.storyboard in Resources */,
 				CD7E49F323991E9800C554B2 /* ServerItemViewController.xib in Resources */,
 				CD7E49ED239841B400C554B2 /* AuthViewController.xib in Resources */,
-				CD7E49EF239846E300C554B2 /* ServersView.xib in Resources */,
+				CD7E49EF239846E300C554B2 /* ServersViewController.xib in Resources */,
 				CD7E49F12398474B00C554B2 /* ServersCell.xib in Resources */,
 				CDF85405235C88BA001132C7 /* Assets.xcassets in Resources */,
 			);
