@@ -26,7 +26,7 @@ final class AuthViewController: UIViewController, UITextFieldDelegate {
     init(networking: Networking, event: ((AuthEvent) -> ())?) {
         self.networking = networking
         self.eventHandler = event
-        super.init(nibName: "AuthViewController", bundle: nil)
+        super.init(nibName: String(describing: type(of: self)), bundle: nil)
         
     }
     

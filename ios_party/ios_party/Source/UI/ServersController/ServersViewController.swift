@@ -25,7 +25,7 @@ final class ServersViewController: UIViewController, UITableViewDataSource, UITa
     init(networking: Networking, event: ((ServersEvent) -> ())?) {
         self.networking = networking
         self.eventHandler = event
-        super.init(nibName: "ServersViewController", bundle: nil)
+        super.init(nibName: String(describing: type(of: self)), bundle: nil)
     }
     
     required init?(coder: NSCoder) {
