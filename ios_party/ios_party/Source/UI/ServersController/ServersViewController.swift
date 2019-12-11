@@ -17,12 +17,14 @@ enum ServersEvent {
 final class ServersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var serversArray = [ServersModel]()
-    private var networking = Networking()
+    private var networking: Networking
     var eventHandler: ((ServersEvent) -> ())?
     
    @IBOutlet var rootView: ServersView?
     
-    init() {
+    init(networking: Networking, event: ((ServersEvent) -> ())?) {
+        self.networking = networking
+        self.eventHandler = event
         super.init(nibName: "ServersView", bundle: nil)
     }
     

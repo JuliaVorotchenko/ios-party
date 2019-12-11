@@ -28,11 +28,6 @@ final class ServerItemViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        
-        print(String(describing: type(of: self)))
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.rootView.fill(model: self.serversItem)

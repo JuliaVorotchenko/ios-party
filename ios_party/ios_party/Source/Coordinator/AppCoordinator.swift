@@ -31,14 +31,10 @@ class AppCoordinator: Coordinator {
     private func createAuthController() {
         let controller = AuthViewController(networking: self.networking, event: self.authEvent)
         self.authController = controller
-        
         self.navigationController.viewControllers = [controller]
-
-        
     }
     
     private func authEvent(_ event: AuthEvent) {
-        
         switch event {
         case .login:
             self.createServersViewController()
@@ -49,27 +45,23 @@ class AppCoordinator: Coordinator {
     }
     
     private func createServersViewController() {
-        let controller = ServersViewController()
+        let controller = ServersViewController(networking: self.networking, event:  self.serversEvent)
         self.navigationController.viewControllers = [controller]
-        controller.eventHandler = { [weak self] event in
-            switch event {
-            case .logout:
-                UserDefaultsContainer.unregister()
-                self?.createAuthController()
-            case .showItem(let item):
-                self?.createServerItemViewController(with: item)
-                
-            }
-            
+    }
+    
+    private func serversEvent(_ event: ServersEvent) {
+        switch event {
+        case .logout:
+            UserDefaultsContainer.unregister()
+            self.createAuthController()
+        case .showItem(let item):
+            self.createServerItemViewController(with: item)
         }
     }
     
     private func createServerItemViewController(with item: ServersModel) {
         let controller = ServerItemViewController(with: item, eventHandler: self.serverItemEvent)
-        
         self.navigationController.pushViewController(controller, animated: true)
-    
-        
     }
     
     private func serverItemEvent(_ event: ServerItemEvent) {
