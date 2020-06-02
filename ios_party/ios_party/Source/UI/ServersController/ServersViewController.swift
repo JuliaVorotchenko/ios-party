@@ -19,6 +19,7 @@ final class ServersViewController: UIViewController, UITableViewDataSource, UITa
     private var serversArray = [ServersModel]()
     private let networking: Networking
     private let eventHandler: ((ServersEvent) -> ())?
+    private lazy var refresher = Refresher()
     
    @IBOutlet var rootView: ServersView?
     
@@ -35,9 +36,9 @@ final class ServersViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getServersList()
-        self.setTableVievDelegate()
+        self.setTableView()
         self.rootView?.setNavigationBar()
-        self.rootView?.tableView.register(UINib(nibName: "ServersCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        //self.refreshControlSetup()
     }
     
     // MARK: - Table view data source & delegate
@@ -58,9 +59,16 @@ final class ServersViewController: UIViewController, UITableViewDataSource, UITa
         self.eventHandler?(.showItem(serversArray[indexPath.row]))
     }
     
-    private func setTableVievDelegate() {
+    private func setTableView() {
+        self.rootView?.tableView.register(UINib(nibName: "ServersCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.rootView?.tableView.delegate = self
         self.rootView?.tableView.dataSource = self
+        self.rootView?.tableView.refreshControl = Refresher(target: self, selector: #selector(self.refreshHandler(_:)))
+    }
+    
+    @objc func refreshHandler(_ sender: Refresher) {
+        self.getServersList()
+        sender.endRefreshing()
     }
     
     //MARK: - IBActions & sort

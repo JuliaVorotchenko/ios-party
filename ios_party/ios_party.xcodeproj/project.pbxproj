@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD45CD592486C4C400ACE2EF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD45CD582486C4C400ACE2EF /* RefreshControl.swift */; };
 		CD4A3B29237AD4BC006D5E2E /* ServerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */; };
 		CD74E07D237F2B0100452FC1 /* ServerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */; };
 		CD7E49ED239841B400C554B2 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7E49EC239841B400C554B2 /* AuthViewController.xib */; };
@@ -41,6 +42,7 @@
 		28E112AF821466EF4767288E /* Pods_ios_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34823FA9B532FFB5FBD9180A /* Pods-ios_party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_party.debug.xcconfig"; path = "Target Support Files/Pods-ios_party/Pods-ios_party.debug.xcconfig"; sourceTree = "<group>"; };
 		5E4E8445BD1ADE40D3CB1EE5 /* Pods-ios_party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_party.release.xcconfig"; path = "Target Support Files/Pods-ios_party/Pods-ios_party.release.xcconfig"; sourceTree = "<group>"; };
+		CD45CD582486C4C400ACE2EF /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		CD4A3B28237AD4BC006D5E2E /* ServerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemView.swift; sourceTree = "<group>"; };
 		CD74E07C237F2B0100452FC1 /* ServerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerItemViewController.swift; sourceTree = "<group>"; };
 		CD7E49EC239841B400C554B2 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		CDF8540F235C8EBA001132C7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CD45CD582486C4C400ACE2EF /* RefreshControl.swift */,
 				CDD9EE65239424D3006A4290 /* Networking */,
 				CDD9ABA12384705000ACA769 /* AppConstants */,
 				CDA67CCF23679B8300CB10D0 /* UserDefaultsContainer */,
@@ -389,6 +392,7 @@
 				CDA67CD423684D3D00CB10D0 /* ServersViewController.swift in Sources */,
 				CDF8541A235CB784001132C7 /* SceneDelegate.swift in Sources */,
 				CDD9ABA32384868E00ACA769 /* AppConstants.swift in Sources */,
+				CD45CD592486C4C400ACE2EF /* RefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
